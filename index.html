@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Luminous Heart — March 15, 2026</title>
+  <meta name="description" content="An evening of music and zikr as we prepare our hearts for Navroz. Sunday, March 15, 2026.">
+  <meta property="og:title" content="The Luminous Heart — Navroz Devotional Evening">
+  <meta property="og:description" content="An evening of music and zikr. Sunday, March 15, 2026. Hosted by Sabrina & Rehman.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Gilda+Display&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script>window.BABEL_ENV = 'production';</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <script>
+    // Suppress Babel in-browser warning
+    var origWarn = console.warn;
+    console.warn = function(msg) {
+      if (typeof msg === 'string' && msg.indexOf('in-browser Babel') !== -1) return;
+      origWarn.apply(console, arguments);
+    };
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+const c = {
+  onyx: "#353535", medallion: "#C9A96E", forest: "#2D4A3E", walnut: "#5C4033",
+  beige: "#F5F0E8", dove: "#D6D2C9", cream: "#FAF8F3", deep: "#1A1A1A", warmWhite: "#FDFAF5",
+};
+
+const geoPattern = `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A96E' stroke-width='0.5' opacity='0.12'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E")`;
+
+const SETLIST = [
+  {
+    id: 1, title: "Surah Al-Fatiha", subtitle: "The Opening", performer: "Faris", duration: "1 min", isZikr: false,
+    context: "The opening chapter of the Holy Quran, recited to begin the evening with divine blessing and protection.",
+    verses: [
+      { t: "Bismillah ir-Rahman ir-Rahim", m: "In the name of God, the Most Gracious, the Most Merciful", ch: false },
+      { t: "Al-hamdu lillahi Rabb il-alamin", m: "All praise is due to God, Lord of all the worlds", ch: false },
+      { t: "Ar-Rahman ir-Rahim", m: "The Most Gracious, the Most Merciful", ch: false },
+      { t: "Maliki yawm id-Din", m: "Master of the Day of Judgment", ch: false },
+      { t: "Iyyaka na'budu wa iyyaka nasta'in", m: "You alone we worship, and You alone we ask for help", ch: false },
+      { t: "Ihdinas-sirat al-mustaqim", m: "Guide us on the straight path", ch: false },
+      { t: "Sirat alladhina an'amta alayhim\nGhayril maghdubi alayhim walad-dallin", m: "The path of those You have blessed\nNot of those who have earned anger, nor of those who have gone astray", ch: false },
+    ],
+  },
+  {
+    id: 2, title: "Welcome & Moment of Silence", subtitle: "", performer: "Sabrina", duration: "2 mins", isZikr: false,
+    context: "A moment to arrive fully, settle in, and set our intention for the evening. There will be breaks between pieces, so if you need to step out, please wait until the end of the song or zikr.",
+    verses: [],
+  },
+  {
+    id: 3, title: "Ali Nu Yaad Karo", subtitle: "", performer: "Saurab", duration: "5 mins", isZikr: false,
+    context: "A Punjabi devotional calling upon Hazrat Ali. 'Ali nu yaad karo' means 'Remember Ali.' The song builds from a gentle plea into an ecstatic celebration of Ali's presence in every dimension of life.",
+    verses: [
+      { t: "Ali nu yaad karo\nRal ke farrayad karo\nHai ghareeban da aye ho aasra", m: "Remember Ali\nTogether, cry out to him\nHe is the refuge of the poor", ch: true },
+      { t: "Ali Maula Ali Maula Ali Dam Dam\nAli Maula Ali Maula Ali Dam Dam", m: "Ali is my Master, Ali with every breath\nAli is my Master, Ali with every breath", ch: true },
+      { t: "Lakh te Karoor wari akkho dam dam\nAli Maula Ali Maula Ali Dam Dam", m: "A hundred thousand times, say it with every breath\nAli is my Master, Ali with every breath", ch: true },
+      { t: "Ali sade dillan wich\nAli sade sahwan wich\nAli saday asse paase\nAli hai nigawan wich", m: "Ali is in our hearts\nAli is in our longings\nAli is all around us\nAli is in our glances", ch: false },
+      { t: "Ashkaan de deray par\nAli diyan rahwan wich\nRab Rakhe Sariyan nu\nAli di panawan wich", m: "On the threshold of tears\nAli is in the pathways\nMay God keep everyone\nIn the shelter of Ali", ch: false },
+      { t: "Eh nabi da pyara Ali Noor Allah Noor\nAli da aye Allah Allah Kabbay wich zahoor", m: "He is the beloved of the Prophet, Ali is the Light of God\nAli's is the divine manifestation at the Kaaba", ch: false },
+      { t: "Ali Maula, Ali Maula, Ali Maula, Ali Ali\nAli Maula Audhey jidey Maula ne Huzoor", m: "Ali is my Master, Ali, Ali\nAli is the Master whose Master is the Prophet", ch: true },
+      { t: "Ali peer peeranda aye, Dillan da suroor\nAli Maula, Ali Maula, Ali Maula, Ali Ali", m: "Ali is the saint of saints, the joy of hearts\nAli is my Master, Ali, Ali", ch: false },
+      { t: "Wallian de sirran da aye taaj Ali Ali\nMomin'nan di bas ha meraj Ali Ali", m: "He is the crown of the saints' secrets, Ali\nFor the faithful, he is the ascension, Ali", ch: false },
+      { t: "Sochaan te takhayulaan da tara Ali Ali\nAshiqaan layi noor da manarah Ali Ali", m: "He is the star of thoughts and imagination, Ali\nFor lovers, he is the minaret of light, Ali", ch: false },
+      { t: "Ghama de tofana che kinara Ali Ali\nDukhiyaan de dilaan da sahara Ali Ali", m: "In the storms of sorrow, he is the shore, Ali\nHe is the support of the brokenhearted, Ali", ch: false },
+      { t: "Bari shan aye Nabi de baad Ali di\nPaye mangday ne sab imdad Ali di\nIbadat ain ibadat yaad Ali di", m: "Great is Ali's glory after the Prophet\nEveryone seeks Ali's help\nRemembering Ali is worship itself", ch: false },
+      { t: "Nabi de Noor di tanveer Haider\nKitab-e-Ishq di tafseer Haider", m: "Haider is the radiance of the Prophet's light\nHaider is the interpretation of the book of love", ch: false },
+      { t: "Shujat da aye paikar kaun Haider\nFateh karda aye Khaybar kaun Haider", m: "Who is the embodiment of bravery? Haider\nWho conquers Khaybar? Haider", ch: false },
+      { t: "Ali di pehchan aye rab di pehchan\nAli dian taqtan nu jaanda jahan", m: "To recognize Ali is to recognize God\nThe whole world knows Ali's throne", ch: false },
+      { t: "Rab da aye sheri uchhi Ali di aye shaan\nKul aye Imaan Ali Nabi da elaan", m: "He is God's lion, great is Ali's glory\nAli is the entirety of faith, the Prophet's declaration", ch: false },
+      { t: "Haider e karaar, Bu turab Ali Ali\nHashmi jawan lajawaab Ali Ali", m: "Haider the steadfast, Abu Turab, Ali\nThe matchless young Hashmi, Ali", ch: false },
+      { t: "Jinhan da na koi, Ali onhan da bharam\nAli Maula Ali Maula Ali Dam Dam", m: "Those who have no one, Ali is their refuge\nAli is my Master, Ali with every breath", ch: true },
+    ],
+  },
+  {
+    id: 4, title: "La Ilaha Illallahu", subtitle: "Zikr", performer: "Saurab", duration: "4 mins", isZikr: true,
+    context: "The fundamental declaration of faith becomes a vehicle for deep remembrance. Close your eyes and feel the vibration in your chest.",
+    verses: [
+      { t: "La ilaha illallahu", m: "There is no god but God", ch: true },
+    ],
+  },
+  {
+    id: 5, title: "Man Kunto Mawla", subtitle: "Amir Khusrow", performer: "Saurab", duration: "4 mins", isZikr: false,
+    context: "Composed by the great 13th-century Sufi poet Amir Khusrow. The opening line is a hadith of the Prophet. The rhythmic chanting lines that follow are tarana, ecstatic syllables for collective devotion.",
+    verses: [
+      { t: "Shah-e-Mardaan, Sher-e-Yazdaan\nQuwwat-e-Parwardigaar", m: "King of the brave, the Lion of God\nThe strength of the Lord", ch: false },
+      { t: "La fata illa Ali\nLa saif illa Zulfiqaar", m: "There is no one like Ali\nThere is no sword like Zulfiqaar", ch: false },
+      { t: "Man kunto Mawla\nFa haza Aliyun Mawla", m: "Whoever I am master to\nAli is his master too", ch: true },
+      { t: "Dara dil-e dara dil-e dar-e daani\nHum tum tanana nana, tana nana ray\nOm tum tanana nana, tana nana ray\nYalali yalali ala, yala ray\nTanana tanana tanana tanana\nTum tanana nana, tana nana ray", m: "Enter into the heart\nEnter into the heart\nMelt therein, you and me\nSing inside in sweet melody", ch: true },
+      { t: "Maula Ali Maula\nMaula Ali Maula", m: "Master is Ali\nMaster is he", ch: true },
+      { t: "Haider-e-um Qalandaram mastam\nBanda-e-Murtaza Ali hastam\nPeshwa-e-tamaam rindaanam\nKe sag-e-koh-e-Sher-e-Yazdaanam", m: "A Haidari, a mystic drowned in devotion am I\nNothing more than a humble servant of Ali the Chosen am I\nAnd yet the foremost amongst all mystics am I\nFor a dog laying in the street of my Lord Ali, am I", ch: false },
+      { t: "Ali Maula, Maula Ali Maula\nMaula Ali Maula, Maula Ali Maula", m: "Ali is my Master, Master is Ali\nMaster is Ali, Master is Ali", ch: true },
+    ],
+  },
+  {
+    id: 6, title: "Zikr", subtitle: "", performer: "Alisa (Saurab on cajón)", duration: "7 mins", isZikr: true,
+    context: "A meditative sequence of divine names and attributes, woven together with Salawat. Each section invokes different qualities of the divine. Let each phrase wash through you.",
+    verses: [
+      { t: "Allahuma sali ala Muhammadin wa ali Muhammad", m: "O God, send blessings upon Muhammad and upon the family of Muhammad", ch: true },
+      { t: "Awal Tu, Akhir Tu\nZahir Tu, Batin Tu\nRabul Tu, Rehman Tu", m: "You are the First, You are the Last\nYou are the Manifest, You are the Hidden\nYou are the Lord, You are the Merciful", ch: true },
+      { t: "Ya Rehman, Ya Rahim", m: "O Most Gracious, O Most Merciful", ch: true },
+      { t: "Ya Hayyul Qayyum, Ya Aliyul Azim\nYa Saheb Zaman, Ya Hazar Imam", m: "O Ever-Living, Self-Sustaining, O Most High, Most Great\nO Lord of the Age, O Present Imam", ch: true },
+      { t: "Ya Ale Nabi, Aulad e Ali\nYa Mushkil Kushan, Ya Hazar Imam", m: "O Family of the Prophet, Children of Ali\nO Solver of Difficulties, O Present Imam", ch: true },
+      { t: "Ya Allah, Ya Wahab\nYa Ali, Allahu Samad", m: "O God, O Bestower\nO Ali, God the Eternal", ch: true },
+      { t: "Pir Shah, Ya Ali, Ya Ali, Ya Muhammad", m: "O Pir Shah, O Ali, O Ali, O Muhammad", ch: true },
+    ],
+  },
+  {
+    id: 8, title: "Chaap Tilak", subtitle: "Amir Khusrow", performer: "Saurab", duration: "5 mins", isZikr: false,
+    context: "Written by Amir Khusrow in the 13th century as a love poem to his spiritual master, Hazrat Nizamuddin Auliya. In Braj Bhasha, it describes the total surrender of identity in the presence of the beloved.",
+    verses: [
+      { t: "Apni chhab banaye ke, main to pee ke paas gayee\nJab chhab dekhi peehu ki, main to apni bhool gayee", m: "I went to my beloved, with my own glow\nWhen I saw His aura, I forgot my own", ch: false },
+      { t: "Chhap tilak sab cheeni ray\nMosay naina milaike", m: "You've taken away my looks, my identity\nBy just a glance", ch: true },
+      { t: "Prem bhatee ka madhva pilaike\nMatvali kar leeni ray\nMosay naina milaike", m: "By making me drink the wine of love-potion\nYou've intoxicated me\nBy just a glance", ch: true },
+      { t: "Gori gori bayyan, hari hari churiyan\nBayyan pakar dhar leeni ray\nMosay naina milaike", m: "My fair, delicate wrists with green bangles in them\nHave been held tightly by you\nBy just a glance", ch: true },
+      { t: "Bal bal jaaon mein toray rang rajwa\nApni see kar leeni ray\nMosay naina milaike", m: "I give my life to you, Oh my cloth-dyer\nYou've dyed me in yourself\nBy just a glance", ch: true },
+      { t: "Khusrau Nijaam kay bal bal jayyiye\nMohay suhaagan keeni ray\nMosay naina milaike", m: "I give my whole life to you Oh, Nijam\nYou've made me your bride\nBy just a glance", ch: true },
+    ],
+  },
+  {
+    id: 7, title: "Qasida: Ali Goyam Ali Joyam", subtitle: "Persian Devotional", performer: "Noorin", duration: "3-4 mins", isZikr: false,
+    context: "A beloved Persian Qasida meaning 'I call Ali, I seek Ali.' Each verse celebrates a different attribute of Hazrat Ali, building into a rapturous declaration of love.",
+    verses: [
+      { t: "Ali Goyam, Ali Joyam", m: "I call Ali, I seek Ali", ch: true },
+      { t: "Ba ruz o shab man-e shaida\nAli Goyam, Ali Joyam\nBa bagh o gulshan-o sahra\nAli Goyam, Ali Joyam", m: "Day and night in my intoxicated heart\nI call Ali, I seek Ali\nIn the orchard, rose gardens and desert\nI call Ali, I seek Ali", ch: true },
+      { t: "Ali ruh o ravan-i man\nAli aram-i jan-i man\nAli zikr-i zaban-i man\nAli Goyam, Ali Joyam", m: "Ali is my soul and life\nAli is the repose of my heart\nMy tongue always recites Ali\nI call Ali, I seek Ali", ch: true },
+      { t: "Ali Sultan-i mulk-i jan\nAli Shahan-Shah-i khuban\nAli Aineh-ye Yazdan\nAli Goyam, Ali Joyam", m: "Ali is ruler of the kingdom of the soul\nAli is emperor of the good\nAli is the mirror of God\nI call Ali, I seek Ali", ch: true },
+      { t: "Ali Hallal-e mushkilha\nAli sultan o shah-e dil\nAli bashad be haq wasil\nAli Goyam, Ali Joyam", m: "Ali is the solver of difficulties\nAli is king and ruler of the heart\nAli is connected to the truth\nI call Ali, I seek Ali", ch: true },
+      { t: "Ali haydar Ali Safdar\nAli munis Ali dilbar\nAli bud yar-e paigambar\nAli Goyam, Ali Joyam", m: "Ali the brave, Ali the hero\nAli the companion, Ali the beloved\nAli the friend of the Prophet\nI call Ali, I seek Ali", ch: true },
+      { t: "Ali awal Ali akhir\nAli batin Ali zahir\nAli bahir Ali tahir\nAli Goyam, Ali Joyam", m: "Ali the first, Ali the last\nAli the hidden, Ali the manifest\nAli the radiant, Ali the pure\nI call Ali, I seek Ali", ch: true },
+    ],
+  },
+  {
+    id: 10, title: "Navroz Ginan", subtitle: "Eji Navrojna Din Sohaamna", performer: "Ikrah", duration: "5 mins", isZikr: false,
+    context: "Composed by Sayyid Fateh Ali Shah, this ginan is traditionally recited by Ismailis on Navroz. It tells the story of the composer's pilgrimage to meet his Imam on Navroz day, and the spiritual ecstasy of that meeting. Imagine the scene: a beautiful spring day, the Lord has gone to the woods, and the devoted servant follows, heart aching with longing, until at last he finds his Master in a sunlit clearing.",
+    verses: [
+      { t: "Eji Navroz naa din sohaamannaa\nSri Hari Kaayaam shikaar ramavaa van gayaa\nSevak naa man thayaa udaasi\nParaan Hari charanne raheaa", m: "O believers! On the magnificent day of Nazroz, the perpetual Lord Ali had gone to the woods for hunting. (Knowing this, I, his servant, plunged into sadness and (my) soul was longing to be at the feet of the Lord Ali.", ch: true, icon: "arrow" },
+      { t: "Eji Sri Kaayaam prite jo chint baandhi\nNar ne prite ame van gayaa\nEvaa van sohaamannaa shri saaheb ditthaa\nDelaa dai devataa raheaa", m: "Having linked the thought with the manifest Lord by devotion, I went to the woods because of the affectionate wish of the Lord. I looked the Lord in the beautiful woods as if the angels had put their very hearts in it.", ch: true, icon: "wings" },
+      { t: "Eji Bhalun thayun saahebe sumat aali\nShri Hari Kaayaam saathe ramavaa ame van gayaa\nAnat aashaa puri hamaari\nDev dil bhaave gameaa", m: "It was goodness that the Lord enlightened a good sense (in mind) and (consequently) went to the woods for hunting with manifest Ali. My intense desire was fulfilled, and found a way into the heart of the Lord.", ch: true, icon: "light" },
+      { t: "Eji Hete Hari sun hirakh baandho\nAvichal rang saaheb se giraheaa\nEvi chint baandhi Nar Kaayaam saathe\nSat bhanddaar motie bhareaa", m: "I love the Lord Ali with (utmost) joy who has conferred eternal bliss. I have tied (my) thought with the perpetual Lord as if found real treasure of pearls.", ch: true, icon: "pearl" },
+      { t: "Eji Ame saaheb saathe sahel kidhaa\nRidh sidhaj paameaa\nEk man ginaan je saambhale\nAa jiv tenaa odhareaa", m: "I enjoyed a trip with the Lord and was bestowed with material and spiritual achievements. One who listens to Holy Ginans attentively, will find a way to their goal.", ch: true, icon: "path" },
+      { t: "Eji Jiv jaare jugat paame\nPraann pope Ram raheaa\nAgar chandan parem raseaa\nHete hans sarovar jiliaa", m: "When the self visualizes reality, it becomes beautiful like a flower and fragrant like aloe-wood. In the (spiritual) lake, the self swims in ecstacy of love.", ch: true, icon: "lotus" },
+      { t: "Eji Gaddh chakavaane kile Shaahaa Khalilaa rame\nTyaan Fateh Ali ne mayaa karine bolaaveaa\nAnat aashaa puri hamaari\nNit Hari nure utthaa", m: "At the sparrow shaped fortress (i.e. the fort of Mehallet), Imam Shah Khalilullah II was enjoying his stay, was kind enough to summon (me) Fateh Ali. My intense desire was fulfilled. The Lord Ali as usual showed His divine glory.", ch: true, icon: "arch" },
+      { t: "Eji Bhaai re moman tame bhaave aaraadho\nBhanne Shamasi tame saambhalo rukhi\nSaaheb naa gunn nahin visaare\nTenaa paraan nahin thaashe dukhi", m: "O believers! Adore (the Lord) with devotion. Says (Sayyed Fateh Ali) Shamsi: Listen, O believers: He who does not avoid the greatness of the Lord, his self will never be grieved.", ch: true, icon: "hands" },
+    ],
+  },
+  {
+    id: 11, title: "Allah Hoo", subtitle: "", performer: "Saurab", duration: "5 mins", isZikr: false,
+    context: "A powerful qawwali that builds from quiet invocation to ecstatic remembrance, each verse exploring a different facet of the divine. Let the rising energy carry you.",
+    verses: [
+      { t: "Allah Hoo! Allah Hoo! Allah Hoo!\nAllah Hoo! Allah Hoo! Allah Hoo!", m: "God is He! God is He! God is He!", ch: true },
+      { t: "Yeh zameen jab na thi, yeh jahaan jab na tha\nChaand suraj na thay, aasman jab na tha\nRaaz-e-haq bhi kisi par ayaan jab na tha\nTab na tha kuch yahaan, tha magar tu hee tu", m: "When this earth and world did not exist\nWhen there was no moon, sun or sky\nWhen the secret of the truth was still unknown\nWhen there was nothing, there was you", ch: false },
+      { t: "Allah Hoo! Allah Hoo! Allah Hoo!", m: "", ch: true },
+      { t: "Har shay tere jamaal ki aainaa daar hai\nHar shay pukaarti hai tu Parvardigaar hai", m: "Everything is a reflection of your glory\nEvery thing cries out that you are the Lord", ch: false },
+      { t: "Teri ruboobiyat ki ada ka kamaal hai\nTu Rab-e-qayaanat hai, tu lajwal hai", m: "It is the distinction of your enthralling visage\nYou are the unrivalled Lord of the Universe", ch: false },
+      { t: "Allah Hoo! Allah Hoo! Allah Hoo!", m: "", ch: true },
+      { t: "Tu jo har aan nayi shaan dikha deta hai\nDeeda-e-shouq ko hairan bana deta hai\nDaali daali teri takhleeq ke gun gaati hai\nPatta patta teri qudrat ka pata deta hai", m: "You who shows new beauty every instant\nSurprises even those who yearn for more\nEvery sapling sings of your creation\nEvery leaf is a signature of your nature", ch: false },
+      { t: "Allah Hoo! Allah Hoo! Allah Hoo!", m: "", ch: true },
+      { t: "Laa ilaahaa teri shaan, ya Wahdahoo\nTu khayaal-o-tajassus, tu hee aarzoo\nAankh ki roshni, dil ki awaaz tu\nTha bhi tu! Hai bhi tu! Hoga bhi tu hee tu!", m: "My God, you are the splendor you promised\nYou are the curiosity, you are the desire\nThe light of my eyes, the voice of my heart\nYou were, you are, and will be only you", ch: false },
+      { t: "Allah Hoo! Allah Hoo! Allah Hoo!", m: "", ch: true },
+      { t: "Khaalik-e-kul hai tu, is mein kya guftagu\nSaare aalam ko hai teri hee justaju\nTeri jalvaagari hai ayaan chaar su\nLa shareeka lahoo, Maalik-e-mulk tu", m: "You are everything, what is the argument in this\nThe whole world is searching only for you\nYour magnificence is in every corner\nYou are in my blood, Lord of the world", ch: false },
+      { t: "Allah Hoo! Allah Hoo! Allah Hoo!", m: "", ch: true },
+    ],
+  },
+  {
+    id: 12, title: "Mast Qalandar", subtitle: "Dam Mast Qalandar", performer: "Saurab", duration: "5 mins", isZikr: false,
+    context: "One of the most ecstatic Sufi compositions, celebrating the spirit of Lal Shahbaz Qalandar of Sehwan, Sindh. The chorus invites everyone into collective joy. Let yourself be moved.",
+    verses: [
+      { t: "O laal meri pat rakhiyo bhala\nJhoole Laalan\nLaal meri pat rakhiyo bhala\nJhoole Laalan\nSindhri da, Shewan da\nSakhi Shahbaz Qalandar", m: "O red robed Lord, may I always be protected\nO red robed Lord, may I always be protected\nO lord of Sindh and sire of Shewan", ch: true },
+      { t: "Duma dum mast Qalandar\nAli da pehla number\nDuma dum mast Qalandar\nSakhi Shahbaz Qalandar", m: "My breath is for the jubilant saint\nLord Ali comes before everything\nMy breath is for the jubilant saint\nO noble saint", ch: true },
+      { t: "O laal meri haaye laal meri", m: "O red robed Lord", ch: true },
+      { t: "Ho char chirag tere baran hamesha\nChar chirag tere baran hamesha\nPanjva main baaran aayi bhala\nJhoole Laalan", m: "Your shrine is always lighted with four lamps\nYour shrine is always lighted with four lamps\nLord, here I come to light the fifth lamp", ch: false },
+      { t: "Sindhri da, Shewan da\nSakhi Shahbaz Qalandar\nDuma dum mast Qalandar\nAli da pehla number\nDuma dum mast Qalandar\nSakhi Shahbaz Qalandar", m: "O lord of Sindh and sire of Shewan\nMy breath is for the jubilant saint\nLord Ali comes before everything\nMy breath is for the jubilant saint\nO noble saint", ch: true },
+    ],
+  },
+  {
+    id: 13, title: "Tu Jhoom", subtitle: "Closing", performer: "", duration: "", isZikr: false,
+    context: "Tu Jhoom means 'You Swirl.' Written by Adnan Dhool, composed by Xulfi and Abdullah Siddiqui, and performed by Abida Parveen and Naseebo Lal for Coke Studio Season 14. A joyful celebration of surrender, self-acceptance, and letting go.",
+    verses: [
+      { t: "Peeda nu mai seene laavaan\nTe mai hasdi jaavaan\nO, peeda nu mai seene laavaan\nTe mai hasdi jaavaan", m: "I will accept pain\nThen keep laughing all the way", ch: false },
+      { t: "Dhuppan de naal lad-lad ke ve\nLabhiyaan apniyan chaavaan\nDukh vi apne, sukh vi apne\nMai te bas eh jaana", m: "Fighting with the harsh sun, I found my own shade\nSadness is mine, happiness is mine, that's all I know", ch: false },
+      { t: "Sab nu samajh ke ki karna ae\nDil nu eh samjhaavaan", m: "What will I do by understanding everyone?\nThat's what I keep explaining to my heart", ch: false },
+      { t: "Tu jhoom, jhoom, jhoom, jhoom\nTu jhoom, jhoom, jhoom, jhoom", m: "Just swirl, swirl, swirl, swirl\nJust swirl, swirl, swirl, swirl", ch: true },
+      { t: "Mai raazi apni zaat toh\nMai uttay apni aukaat toh\nAe duniya meri fikar nahi\nMai samajh gaye har baat nu", m: "I am satisfied with myself\nI am higher than what I can accomplish\nThis world is of no concern to me\nI understand every single thing", ch: false },
+      { t: "Ki karna oonchiyan shaanan nu\nKi hath laana aasmanan nu\nMai hasde hasde hai jeena\nMai nikal gaye gumaanan toh", m: "Why do we need the highest status?\nWhy do we need to touch the sky?\nI want to live my life laughing\nI've let go of all pretense", ch: false },
+      { t: "Duniya raazi karke kamle\nPhir vi chain nai aauna\nJo hai tera labh jaayega\nKarke koi bahana", m: "You can spend your life making the world happy\nBut you will still never find peace\nWhatever is yours will find you, one way or another\nNothing is in your control", ch: false },
+      { t: "Tere bas mein kuch vi nahi ae\nDil nu ae samjhaavaan", m: "Nothing is in your control\nI keep trying to tell my heart", ch: false },
+      { t: "Tu jhoom, jhoom, jhoom, jhoom\nO, tu jhoom, jhoom, jhoom, jhoom", m: "Just swirl, swirl, swirl, swirl\nO, just swirl, swirl, swirl, swirl", ch: true },
+      { t: "Mai deewani, kuch na jaana\nMai mastani, kuch na jaana\nKuch na jaana", m: "I am enraptured, I know nothing\nI am carefree, I know nothing\nI know nothing", ch: true },
+      { t: "Nigah-e-yaar jise ashna-e-raaz kare\nWo apni khoobi-e-qismat pe kyun na naaz kare", m: "The lover's eyes that share secrets\nWhy shouldn't they take pride in their destiny", ch: false },
+      { t: "O, tu jhoom, jhoom, jhoom, jhoom\nTu jhoom, tu jhoom, tu jhoom tu\nTu jhoom, jhoom, jhoom, jhoom", m: "O, just swirl, swirl, swirl, swirl\nJust swirl, just swirl, just swirl\nJust swirl, swirl, swirl, swirl", ch: true },
+    ],
+  },
+];
+
+function StarDivider() {
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", margin: "2.5rem 0" }}>
+      <div style={{ width: 40, height: 1, background: c.medallion, opacity: 0.4 }} />
+      <span style={{ color: c.medallion, fontSize: "0.7rem", letterSpacing: "0.3em" }}>&#10022;</span>
+      <div style={{ width: 40, height: 1, background: c.medallion, opacity: 0.4 }} />
+    </div>
+  );
+}
+
+function FadeIn({ children, style }) {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(false);
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.1 });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+  return <div ref={ref} style={{ opacity: vis ? 1 : 0, transform: vis ? "translateY(0)" : "translateY(25px)", transition: "opacity 0.8s ease, transform 0.8s ease", ...(style || {}) }}>{children}</div>;
+}
+
+function VerseIcon({ name }) {
+  const s = { width: 28, height: 28, flexShrink: 0 };
+  const stroke = c.medallion;
+  const fill = "none";
+  const sw = "1.2";
+  const icons = {
+    arrow: <svg style={s} viewBox="0 0 28 28" fill={fill}><path d="M10 4l-5 6h2.5l-3.5 6h2.5L3 22h14l-3.5-6h2.5l-3.5-6H15L10 4z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><rect x="8.5" y="22" width="3" height="3" stroke={stroke} strokeWidth="0.8"/><path d="M19 9l-3.5 4.5h2l-2.5 4.5h2L14 22h10l-3-4h2l-2.5-4.5h2L19 9z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><rect x="17.5" y="22" width="3" height="3" stroke={stroke} strokeWidth="0.8"/></svg>,
+    wings: <svg style={s} viewBox="0 0 28 28" fill={fill}><circle cx="7" cy="5" r="2" stroke={stroke} strokeWidth={sw}/><path d="M7 7v6" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M7 13l-3 7" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M7 13l3 7" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M5 9l-2 4" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M9 9l2-1v5" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M20 4l-5 7h3l-5 9h3L12 26h16l-4-6h3l-5-9h3L20 4z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><rect x="19" y="26" width="2" height="2" stroke={stroke} strokeWidth="0.7"/><line x1="2" y1="27" x2="27" y2="27" stroke={stroke} strokeWidth="0.7"/></svg>,
+    light: <svg style={s} viewBox="0 0 28 28" fill={fill}><circle cx="14" cy="14" r="5" stroke={stroke} strokeWidth={sw}/><line x1="14" y1="3" x2="14" y2="6" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="14" y1="22" x2="14" y2="25" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="3" y1="14" x2="6" y2="14" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="22" y1="14" x2="25" y2="14" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="6.2" y1="6.2" x2="8.3" y2="8.3" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="21.8" y1="6.2" x2="19.7" y2="8.3" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><line x1="8.3" y1="19.7" x2="6.2" y2="21.8" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/></svg>,
+    pearl: <svg style={s} viewBox="0 0 28 28" fill={fill}><path d="M4 19c0 0 4 5 10 5s10-5 10-5" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M5 19c1-0.5 4-1.5 9-1.5s8 1 9 1.5" stroke={stroke} strokeWidth="0.8"/><path d="M14 17C14 17 8 15 6 10" stroke={stroke} strokeWidth="0.8" strokeLinecap="round"/><path d="M14 17C14 17 20 15 22 10" stroke={stroke} strokeWidth="0.8" strokeLinecap="round"/><path d="M14 17C14 17 11 14 10 8" stroke={stroke} strokeWidth="0.8" strokeLinecap="round"/><path d="M14 17C14 17 17 14 18 8" stroke={stroke} strokeWidth="0.8" strokeLinecap="round"/><path d="M14 17V7" stroke={stroke} strokeWidth="0.8" strokeLinecap="round"/><path d="M6 10C8 6 11 4 14 3c3 1 6 3 8 7" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><circle cx="14" cy="19" r="2" stroke={stroke} strokeWidth={sw}/></svg>,
+    path: <svg style={s} viewBox="0 0 28 28" fill={fill}><path d="M18 4c4 0 7 3 7 7 0 3-1.5 5-3 7s-2 3-2 5v2" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M17 12c1.5 0 2.5 1 2.5 2.5S18.5 17 17 17" stroke={stroke} strokeWidth="0.9" strokeLinecap="round"/><circle cx="17" cy="18.5" r="0.7" fill={stroke}/><path d="M7 11c-1.5 1-2.5 2-2.5 3" stroke={stroke} strokeWidth="0.9" strokeLinecap="round"/><path d="M4 11c-1.2 0.8-2 1.8-2 3" stroke={stroke} strokeWidth="0.9" strokeLinecap="round"/></svg>,
+    lotus: <svg style={s} viewBox="0 0 28 28" fill={fill}><path d="M14 6c-1.5 3-2 6-2 9h4c0-3-0.5-6-2-9z" stroke={stroke} strokeWidth={sw} strokeLinejoin="round"/><path d="M12 15c-1-4-3-7-5-9 0 4 1 8 5 9z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><path d="M16 15c1-4 3-7 5-9 0 4-1 8-5 9z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><path d="M12 15c-2-2-5-4-8-4 2 3 5 5 8 4z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><path d="M16 15c2-2 5-4 8-4-2 3-5 5-8 4z" stroke={stroke} strokeWidth="0.9" strokeLinejoin="round"/><path d="M6 19c2-2 5-3 8-3s6 1 8 3" stroke={stroke} strokeWidth="0.8" strokeLinecap="round"/><path d="M8 21c2-1.5 4-2 6-2s4 0.5 6 2" stroke={stroke} strokeWidth="0.7" strokeLinecap="round"/></svg>,
+    arch: <svg style={{width: 32, height: 32, flexShrink: 0}} viewBox="0 0 32 32" fill={fill}><path d="M8 24h16" stroke={stroke} strokeWidth="1.5" strokeLinecap="round"/><path d="M8 24l1-6h14l1 6" stroke={stroke} strokeWidth="1.2" strokeLinejoin="round"/><path d="M9 18c0 0 1-4 3-4s2 3 4 3 2-3 4-3 3 4 3 4" stroke={stroke} strokeWidth="1.2" strokeLinecap="round"/><line x1="16" y1="14" x2="16" y2="8" stroke={stroke} strokeWidth="1.2" strokeLinecap="round"/><path d="M15 10c0 0 0.3-2 1-2s1 2 1 2" stroke={stroke} strokeWidth="1" strokeLinecap="round"/><circle cx="16" cy="7" r="1" stroke={stroke} strokeWidth="0.8"/></svg>,
+    hands: <svg style={s} viewBox="0 0 28 28" fill={fill}><path d="M14 3c-1 0-1.5 0.5-1.5 2v7c0 1 0.5 1.5 1.5 1.5" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M14 3c1 0 1.5 0.5 1.5 2v7c0 1-0.5 1.5-1.5 1.5" stroke={stroke} strokeWidth={sw} strokeLinecap="round"/><path d="M12.5 5c-1-0.5-3-1-4 1-1 3 0 7 1.5 10l-4 7" stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"/><path d="M15.5 5c1-0.5 3-1 4 1 1 3 0 7-1.5 10l4 7" stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  };
+  return icons[name] || null;
+}
+
+function SongSection({ song, index }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasLyrics = song.verses.length > 0;
+  return (
+    <FadeIn>
+      <div style={{ marginBottom: "0.75rem" }}>
+        <div onClick={() => hasLyrics && setExpanded(!expanded)} style={{
+          padding: "1rem 1.2rem", borderRadius: expanded ? "12px 12px 0 0" : 12,
+          background: expanded ? c.beige : c.warmWhite, border: "1px solid " + (expanded ? c.medallion + "44" : c.dove + "33"),
+          borderBottom: expanded ? "none" : undefined, cursor: hasLyrics ? "pointer" : "default",
+          transition: "all 0.3s ease", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.8rem",
+        }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: 3 }}>
+              <span style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.55rem", letterSpacing: "0.08em", color: c.cream, background: song.isZikr ? c.forest : c.walnut, padding: "0.12rem 0.4rem", borderRadius: 4, fontWeight: 500 }}>
+                {index}
+              </span>
+              <span style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.05rem", color: c.onyx }}>{song.title}</span>
+            </div>
+            {song.subtitle && <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: c.walnut, fontStyle: "italic", fontWeight: 300, marginLeft: "2rem" }}>{song.subtitle}</div>}
+            {song.performer && <div style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.65rem", color: c.dove, marginTop: 3, marginLeft: "2rem" }}>{song.performer}{song.duration ? " \u00B7 " + song.duration : ""}</div>}
+          </div>
+          {hasLyrics && <span style={{ color: c.medallion, fontSize: "1rem", transition: "transform 0.3s ease", transform: expanded ? "rotate(180deg)" : "rotate(0)", marginTop: 2 }}>{"\u25BE"}</span>}
+        </div>
+        {expanded && hasLyrics && (
+          <div style={{ padding: "1rem 1.2rem 1.2rem", background: c.beige, border: "1px solid " + c.medallion + "44", borderTop: "none", borderRadius: "0 0 12px 12px" }}>
+            {song.context && (
+              <div style={{ padding: "0.7rem 0.9rem", background: c.forest + "0a", borderLeft: "3px solid " + c.forest + "44", borderRadius: "0 8px 8px 0", marginBottom: "1.2rem" }}>
+                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: c.walnut, fontStyle: "italic", fontWeight: 300, lineHeight: 1.7, margin: 0 }}>{song.context}</p>
+              </div>
+            )}
+            {song.verses.map((v, i) => (
+              <div key={i} style={{ padding: "0.6rem 0.7rem 0.6rem 0.9rem", marginBottom: "0.4rem", borderLeft: v.ch ? "3px solid " + c.medallion + "88" : "3px solid transparent", background: v.ch ? c.medallion + "08" : "transparent", borderRadius: "0 6px 6px 0", display: "flex", gap: "0.5rem" }}>
+                <div style={{ flex: 1 }}>
+                  {v.ch && <span style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.5rem", letterSpacing: "0.2em", textTransform: "uppercase", color: c.medallion, display: "block", marginBottom: "0.3rem" }}>{"\u266B"} Sing Along</span>}
+                  <div style={{ fontFamily: "'Gilda Display', serif", fontSize: "1rem", color: c.onyx, lineHeight: 1.6, whiteSpace: "pre-line" }}>{v.t}</div>
+                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.82rem", color: c.walnut, fontStyle: "italic", fontWeight: 300, lineHeight: 1.6, marginTop: "0.2rem", whiteSpace: "pre-line" }}>{v.m}</div>
+                </div>
+                {v.icon && <div style={{ flexShrink: 0, paddingTop: v.ch ? "1.2rem" : "0.2rem", opacity: 0.4 }}><VerseIcon name={v.icon} /></div>}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </FadeIn>
+  );
+}
+
+function LuminousHeart() {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
+  let songNum = 0;
+  return (
+    <div style={{ minHeight: "100vh", background: c.warmWhite, fontFamily: "'Cormorant Garamond', serif", color: c.onyx }}>
+      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", background: "linear-gradient(170deg, " + c.deep + " 0%, #2A2318 40%, " + c.walnut + "99 100%)" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: geoPattern, backgroundSize: "80px 80px", opacity: 0.6 }} />
+        <div style={{ position: "absolute", top: "30%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, " + c.medallion + "15 0%, transparent 70%)" }} />
+        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "2rem", maxWidth: 600, opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(40px)", transition: "all 1.4s cubic-bezier(0.22, 1, 0.36, 1)" }}>
+          <div style={{ fontSize: "0.65rem", letterSpacing: "0.4em", textTransform: "uppercase", color: c.medallion, marginBottom: "2rem", fontFamily: "'Karla', sans-serif", fontWeight: 400, opacity: loaded ? 1 : 0, transition: "opacity 1.2s ease 0.3s" }}>You are warmly invited</div>
+          <h1 style={{ fontFamily: "'Gilda Display', serif", fontSize: "clamp(2.4rem, 6vw, 4rem)", color: c.cream, fontWeight: 400, lineHeight: 1.15, margin: "0 0 0.4rem", opacity: loaded ? 1 : 0, transition: "opacity 1.2s ease 0.5s" }}>The Luminous Heart</h1>
+          <div style={{ width: 50, height: 1, background: c.medallion, margin: "1.5rem auto", opacity: loaded ? 0.6 : 0, transition: "opacity 1.2s ease 0.7s" }} />
+          <p style={{ fontSize: "1.3rem", color: c.dove, fontWeight: 300, fontStyle: "italic", lineHeight: 1.6, margin: "0 0 0.4rem", opacity: loaded ? 1 : 0, transition: "opacity 1.2s ease 0.8s" }}>An evening of music and zikr</p>
+          <p style={{ fontSize: "1rem", color: c.dove + "aa", fontWeight: 300, margin: 0, opacity: loaded ? 1 : 0, transition: "opacity 1.2s ease 0.9s" }}>as we prepare our hearts for Navroz</p>
+          <div style={{ marginTop: "3rem", opacity: loaded ? 1 : 0, transition: "opacity 1.2s ease 1.1s" }}>
+            <div style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.6rem", color: c.cream }}>Sunday, March 15</div>
+            <div style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.8rem", letterSpacing: "0.15em", color: c.medallion, marginTop: "0.5rem", fontWeight: 300 }}>6:00 PM &#8212; 9:00 PM</div>
+          </div>
+        </div>
+      </div>
+      <div style={{ padding: "4rem 1.5rem", maxWidth: 620, margin: "0 auto" }}>
+        <FadeIn style={{ textAlign: "center", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.35em", textTransform: "uppercase", color: c.medallion, fontFamily: "'Karla', sans-serif", fontWeight: 400, marginBottom: "1.5rem" }}>The Invitation</div>
+          <p style={{ fontSize: "1.2rem", lineHeight: 1.9, fontWeight: 300, color: c.onyx }}>We invite you to an evening of devotional music and remembrance. Together we will sing, remember, and open our hearts in the company of kindred spirits.</p>
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.8, fontWeight: 300, fontStyle: "italic", color: c.walnut, marginTop: "1.2rem" }}>Come in comfortable clothing, ready to sing along.<br />Please arrive a few minutes early so we may begin together.</p>
+        </FadeIn>
+        <StarDivider />
+        <FadeIn style={{ textAlign: "center", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.35em", textTransform: "uppercase", color: c.medallion, fontFamily: "'Karla', sans-serif", fontWeight: 400, marginBottom: "1.5rem" }}>The Evening</div>
+          {[{ time: "6:15 PM", event: "Dua", desc: "Opening prayer together" }, { time: "6:30 PM", event: "Dinner", desc: "A shared meal to nourish body and spirit" }, { time: "7:15 PM", event: "Music & Zikr", desc: "Devotional songs and remembrance" }].map((item, i) => (
+            <div key={i} style={{ padding: "0.7rem 1rem", marginBottom: "0.4rem", borderRadius: 10, border: "1px solid " + c.dove + "33", textAlign: "left", display: "flex", gap: "1rem" }}>
+              <div style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.65rem", color: c.medallion, fontWeight: 500, minWidth: 58, paddingTop: 3 }}>{item.time}</div>
+              <div>
+                <div style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.05rem", color: c.onyx }}>{item.event}</div>
+                <div style={{ fontSize: "0.85rem", color: c.walnut, fontWeight: 300, fontStyle: "italic" }}>{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </FadeIn>
+        <StarDivider />
+        <FadeIn style={{ textAlign: "center", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.35em", textTransform: "uppercase", color: c.medallion, fontFamily: "'Karla', sans-serif", fontWeight: 400, marginBottom: "1rem" }}>Where</div>
+          <div style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.2rem", color: c.onyx, marginBottom: "0.3rem" }}>Our Home</div>
+          <p style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.85rem", color: c.walnut, fontWeight: 300, marginBottom: "1rem" }}>9227 NE 173rd St, Bothell, WA</p>
+          <a href="https://maps.google.com/?q=9227+NE+173rd+St+Bothell+WA" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "0.5rem 1.5rem", border: "1px solid " + c.medallion + "66", borderRadius: 8, color: c.medallion, fontFamily: "'Karla', sans-serif", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500 }}>Open in Maps</a>
+        </FadeIn>
+        <StarDivider />
+        <FadeIn style={{ textAlign: "center", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.35em", textTransform: "uppercase", color: c.medallion, fontFamily: "'Karla', sans-serif", fontWeight: 400, marginBottom: "1rem" }}>Your Hosts</div>
+          <div style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.2rem", color: c.onyx }}>Sabrina & Rehman</div>
+          <p style={{ fontSize: "0.95rem", fontWeight: 300, fontStyle: "italic", color: c.walnut, marginTop: "0.4rem" }}>We look forward to welcoming you into our home.</p>
+        </FadeIn>
+        <StarDivider />
+        <FadeIn style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.35em", textTransform: "uppercase", color: c.medallion, fontFamily: "'Karla', sans-serif", fontWeight: 400, marginBottom: "0.5rem" }}>The Program</div>
+          <p style={{ fontSize: "0.85rem", color: c.walnut, fontWeight: 300, fontStyle: "italic" }}>Tap each piece to see lyrics and translations</p>
+        </FadeIn>
+        {SETLIST.map((song) => {
+          if (song.verses.length > 0) songNum++;
+          return <SongSection key={song.id} song={song} index={songNum} />;
+        })}
+      </div>
+      <div style={{ background: "linear-gradient(180deg, transparent 0%, " + c.beige + " 100%)", padding: "3rem 2rem 2rem", textAlign: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginBottom: "1.5rem" }}>
+          {[0,1,2,3,4].map(i => <div key={i} style={{ width: 3, height: 3, borderRadius: "50%", background: c.medallion, opacity: 0.4 }} />)}
+        </div>
+        <p style={{ fontSize: "0.95rem", fontStyle: "italic", color: c.walnut, fontWeight: 300, opacity: 0.7 }}>The Luminous Heart &middot; Navroz 2026</p>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<LuminousHeart />);
+  </script>
+</body>
+</html>
