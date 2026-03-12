@@ -184,7 +184,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 13, title: "Tu Jhoom", subtitle: "Closing", performer: "", duration: "", isZikr: false,
+    id: 13, title: "Tu Jhoom", subtitle: "Closing", performer: "Saurab", duration: "", isZikr: false,
     context: "Tu Jhoom means 'You Swirl.' Written by Adnan Dhool, composed by Xulfi and Abdullah Siddiqui, and performed by Abida Parveen and Naseebo Lal for Coke Studio Season 14. A joyful celebration of surrender, self-acceptance, and letting go.",
     verses: [
       { t: "Peeda nu mai seene laavaan\nTe mai hasdi jaavaan\nO, peeda nu mai seene laavaan\nTe mai hasdi jaavaan", m: "I will accept pain\nThen keep laughing all the way", ch: false },
@@ -297,7 +297,7 @@ function LuminousHeart() {
   return (
     <div style={{ minHeight: "100vh", background: c.warmWhite, fontFamily: "'Cormorant Garamond', serif", color: c.onyx }}>
       <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", background: "linear-gradient(170deg, " + c.deep + " 0%, #2A2318 40%, " + c.walnut + "99 100%)" }}>
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 120, backgroundImage: "url('pattern-dark.png')", backgroundSize: "200px 200px", backgroundPosition: "center bottom", opacity: 0.35, maskImage: "linear-gradient(to bottom, transparent, black)", WebkitMaskImage: "linear-gradient(to bottom, transparent, black)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: geoPattern, backgroundSize: "80px 80px", opacity: 0.6 }} />
         <div style={{ position: "absolute", top: "30%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, " + c.medallion + "15 0%, transparent 70%)" }} />
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "2rem", maxWidth: 600, opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(40px)", transition: "all 1.4s cubic-bezier(0.22, 1, 0.36, 1)" }}>
           <div style={{ fontSize: "0.65rem", letterSpacing: "0.4em", textTransform: "uppercase", color: c.medallion, marginBottom: "2rem", fontFamily: "'Karla', sans-serif", fontWeight: 400, opacity: loaded ? 1 : 0, transition: "opacity 1.2s ease 0.3s" }}>You are warmly invited</div>
