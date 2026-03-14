@@ -41,7 +41,7 @@ const geoPattern = `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBo
 
 const SETLIST = [
   {
-    id: 1, title: "Surah Al-Fatiha", subtitle: "The Opening", performer: "Faris", duration: "2 mins", isZikr: false,
+    id: 1, title: "Surah Al-Fatiha", subtitle: "The Opening", performer: "Faris", duration: "2", isZikr: false,
     context: "The opening chapter of the Holy Quran, recited to begin the evening with divine blessing and protection.",
     verses: [
       { t: "Bismillah ir-Rahman ir-Rahim", m: "In the name of God, the Most Gracious, the Most Merciful", ch: false },
@@ -54,12 +54,12 @@ const SETLIST = [
     ],
   },
   {
-    id: 2, title: "Welcome & Moment of Silence", subtitle: "", performer: "Sabrina", duration: "2 mins", isZikr: false,
+    id: 2, title: "Welcome & Moment of Silence", subtitle: "", performer: "Sabrina", duration: "2", isZikr: false,
     context: "A moment to arrive fully, settle in, and set our intention for the evening. There will be breaks between pieces, so if you need to step out, please wait until the end of the song or zikr.",
     verses: [],
   },
   {
-    id: 3, title: "Ali Nu Yaad Karo", subtitle: "", performer: "Saurabh", duration: "5 mins", isZikr: false,
+    id: 3, title: "Ali Nu Yaad Karo", subtitle: "", performer: "Saurabh", duration: "5", isZikr: false,
     context: "A Punjabi devotional calling upon Hazrat Ali. 'Ali nu yaad karo' means 'Remember Ali.' The song builds from a gentle plea into an ecstatic celebration of Ali's presence in every dimension of life.",
     verses: [
       { t: "Ali nu yaad karo\nRal ke farrayad karo\nHai ghareeban da aye ho aasra", m: "Remember Ali\nTogether, cry out to him\nHe is the refuge of the poor", ch: true },
@@ -83,14 +83,14 @@ const SETLIST = [
     ],
   },
   {
-    id: 4, title: "La Ilaha Illallahu", subtitle: "Zikr", performer: "Saurabh", duration: "4 mins", isZikr: true,
+    id: 4, title: "La Ilaha Illallahu", subtitle: "Zikr", performer: "Saurabh", duration: "4", isZikr: true,
     context: "The fundamental declaration of faith becomes a vehicle for deep remembrance. Close your eyes and feel the vibration in your chest.",
     verses: [
       { t: "La ilaha illallahu", m: "There is no god but God", ch: true },
     ],
   },
   {
-    id: 5, title: "Sanson Ki Mala", subtitle: "", performer: "Saurabh", duration: "5 mins", isZikr: false,
+    id: 5, title: "Sanson Ki Mala", subtitle: "", performer: "Saurabh\nSaurabh on cajón", duration: "5", isZikr: false,
     context: "A beloved Hindi devotional that uses the metaphor of breath as a prayer garland. Each breath becomes a bead on which the beloved's name is strung. The song dissolves the boundaries between lover and beloved, self and divine.",
     verses: [
       { t: "Aa Piya In Nainan Mein\nJo Palk Dhamp Tohe Loon\nNaan Mein Dekhoon Gair Ko\nNaan Mein Tohe Dekhan Doon", m: "O beloved arise inside my eyes\nLet me hold you within\nI will not see any other\nNor will I let you", ch: false },
@@ -117,7 +117,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 6, title: "Zikr", subtitle: "", performer: "Alisa (Saurabh on cajón)", duration: "7 mins", isZikr: true,
+    id: 6, title: "Zikr", subtitle: "", performer: "Alisa (Saurabh on cajón)", duration: "7", isZikr: true,
     context: "A meditative sequence of divine names and attributes, woven together with Salawat. Each section invokes different qualities of the divine. Let each phrase wash through you.",
     verses: [
       { t: "Allahuma sali ala Muhammadin wa ali Muhammad", m: "O God, send blessings upon Muhammad and upon the family of Muhammad", ch: true },
@@ -130,7 +130,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 8, title: "Chaap Tilak", subtitle: "Amir Khusrow", performer: "Saurabh", duration: "5 mins", isZikr: false,
+    id: 8, title: "Chaap Tilak", subtitle: "Amir Khusrow", performer: "Saurabh", duration: "5", isZikr: false,
     context: "Written by Amir Khusrow in the 13th century as a love poem to his spiritual master, Hazrat Nizamuddin Auliya. In Braj Bhasha, it describes the total surrender of identity in the presence of the beloved.",
     verses: [
       { t: "Apni chhab banaye ke, main to pee ke paas gayee\nJab chhab dekhi peehu ki, main to apni bhool gayee", m: "I went to my beloved, with my own glow\nWhen I saw His aura, I forgot my own", ch: false },
@@ -142,7 +142,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 7, title: "Qasida: Ali Goyam Ali Joyam", subtitle: "Persian Devotional", performer: "Noorin", duration: "4 mins", isZikr: false,
+    id: 7, title: "Qasida: Ali Goyam Ali Joyam", subtitle: "Persian Devotional", performer: "Noorin", duration: "4", isZikr: false,
     context: "A beloved Persian Qasida meaning 'I call Ali, I seek Ali.' Each verse celebrates a different attribute of Hazrat Ali, building into a rapturous declaration of love.",
     verses: [
       { t: "Ali Goyam, Ali Joyam", m: "I call Ali, I seek Ali", ch: true },
@@ -155,7 +155,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 10, title: "Navroz Ginan", subtitle: "Eji Navrojna Din Sohaamna", performer: "Ikrah", duration: "5 mins", isZikr: false,
+    id: 10, title: "Navroz Ginan", subtitle: "Eji Navrojna Din Sohaamna", performer: "Ikrah", duration: "5", isZikr: false,
     context: "Composed by Sayyid Fateh Ali Shah, this ginan is traditionally recited by Ismailis on Navroz. It tells the story of the composer's pilgrimage to meet his Imam on Navroz day, and the spiritual ecstasy of that meeting. Imagine the scene: a beautiful spring day, the Lord has gone to the woods, and the devoted servant follows, heart aching with longing, until at last he finds his Master in a sunlit clearing.",
     verses: [
       { t: "Eji Navroz naa din sohaamannaa\nSri Hari Kaayaam shikaar ramavaa van gayaa\nSevak naa man thayaa udaasi\nParaan Hari charanne raheaa", m: "O believers! On the magnificent day of Nazroz, the perpetual Lord Ali had gone to the woods for hunting. (Knowing this, I, his servant, plunged into sadness and (my) soul was longing to be at the feet of the Lord Ali.", ch: true },
@@ -169,7 +169,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 11, title: "Allah Hoo", subtitle: "", performer: "Saurabh", duration: "5 mins", isZikr: false,
+    id: 11, title: "Allah Hoo", subtitle: "", performer: "Saurabh", duration: "5", isZikr: false,
     context: "A powerful qawwali that builds from quiet invocation to ecstatic remembrance, each verse exploring a different facet of the divine. Let the rising energy carry you.",
     verses: [
       { t: "Allah Hoo! Allah Hoo! Allah Hoo!\nAllah Hoo! Allah Hoo! Allah Hoo!", m: "God is He! God is He! God is He!", ch: true },
@@ -187,7 +187,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 12, title: "Mast Qalandar", subtitle: "Dam Mast Qalandar", performer: "Saurabh", duration: "5 mins", isZikr: false,
+    id: 12, title: "Dam Mast Qalandar", subtitle: "", performer: "Saurabh", duration: "5", isZikr: false,
     context: "One of the most ecstatic Sufi compositions, celebrating the spirit of Lal Shahbaz Qalandar of Sehwan, Sindh. The chorus invites everyone into collective joy. Let yourself be moved.",
     verses: [
       { t: "O laal meri pat rakhiyo bhala\nJhoole Laalan\nLaal meri pat rakhiyo bhala\nJhoole Laalan\nSindhri da, Shewan da\nSakhi Shahbaz Qalandar", m: "O red robed Lord, may I always be protected\nO red robed Lord, may I always be protected\nO lord of Sindh and sire of Shewan", ch: true },
@@ -198,7 +198,7 @@ const SETLIST = [
     ],
   },
   {
-    id: 13, title: "Tu Jhoom", subtitle: "Closing", performer: "Saurabh", duration: "4 mins", isZikr: false,
+    id: 13, title: "Tu Jhoom", subtitle: "Closing", performer: "Saurabh", duration: "4", isZikr: false,
     context: "Tu Jhoom means 'You Swirl.' Written by Adnan Dhool, composed by Xulfi and Abdullah Siddiqui, and performed by Abida Parveen and Naseebo Lal for Coke Studio Season 14. A joyful celebration of surrender, self-acceptance, and letting go.",
     verses: [
       { t: "Peeda nu mai seene laavaan\nTe mai hasdi jaavaan\nO, peeda nu mai seene laavaan\nTe mai hasdi jaavaan", m: "I will accept pain\nThen keep laughing all the way", ch: false },
@@ -276,7 +276,7 @@ function SongSection({ song, index }) {
               <span style={{ fontFamily: "'Gilda Display', serif", fontSize: "1.05rem", color: c.onyx }}>{song.title}</span>
             </div>
             {song.subtitle && <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.85rem", color: c.walnut, fontStyle: "italic", fontWeight: 300, marginLeft: "2rem" }}>{song.subtitle}</div>}
-            {song.performer && <div style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.65rem", color: c.walnut, marginTop: 3, marginLeft: "2rem" }}>{song.performer}{song.duration ? " \u00B7 " + song.duration : ""}</div>}
+            {song.performer && <div style={{ fontFamily: "'Karla', sans-serif", fontSize: "0.65rem", color: c.walnut, marginTop: 3, marginLeft: "2rem", whiteSpace: "pre-line" }}>{song.performer}{song.duration ? " \u00B7 " + song.duration : ""}</div>}
           </div>
           {hasLyrics && <span style={{ color: c.medallion, fontSize: "1rem", transition: "transform 0.3s ease", transform: expanded ? "rotate(180deg)" : "rotate(0)", marginTop: 2 }}>{"\u25BE"}</span>}
         </div>
