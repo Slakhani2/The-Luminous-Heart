@@ -296,7 +296,7 @@ const PROGRAM = [
     ],
   },
   {
-    title: "Bood Ali Bood", subtitle: "Persian Qasida · Ta Surat e Paivand", performer: "Saurabh & Tejus",
+    title: "Bood Ali Bood", keepParts: true, subtitle: "Persian Qasida · Ta Surat e Paivand", performer: "Saurabh & Tejus",
     meaning: "“Bood Ali Bood” means “Ali was present.” This revered Persian qasida (ode of praise) explores esoteric Islamic metaphysics (irfan). It describes Hazrat Ali not only as a historical figure but as the cosmic manifestation of Divine Light (Noor) that existed before physical creation. The poetry travels through history, showing that while empires, prophets, and universes cycled through time, the reality of Divine Guidance was always present.",
     connection: "The qasida mirrors the core Shi‘i Ismaili doctrine of the Eternal Noor of Imamat: the spiritual essence and light of the Imam existed before the creation of the physical world and continues to guide humanity through the living Imam-of-the-Time.",
     origins: ["The text is traditionally attributed to the 13th-century mystic poet Shams Tabrizi, spiritual mentor of Jalaluddin Rumi. For generations it has been a foundational part of the devotional repertoire of Central Asian, Afghan, and South Asian Ismaili communities, performed with rubab, daf, and harmonium. Recent revivals have added ambient and electronic layers while preserving its meditative core."],
@@ -509,6 +509,7 @@ function render() {
         const tags = v.ch ? [`<span class="tag">&#9835; Sing along</span>`] : [];
         return `<div class="verse${v.ch ? " ch" : ""}">${tags.join("")}<div class="l">${esc(v.t)}</div>${v.m ? `<div class="m">${esc(v.m)}</div>` : ""}</div>`;
       }).join("");
+      if (item.keepParts) return `<div class="part">${p.title ? `<div class="part-title">${esc(p.title)}</div>` : ""}${p.note ? `<div class="part-note">${esc(p.note)}</div>` : ""}<div class="verses">${verses}</div></div>`;
       return `<div class="verses">${verses}</div>`;
     }).join("");
     const body = hasBody ? `
