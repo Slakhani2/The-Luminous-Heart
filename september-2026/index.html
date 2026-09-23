@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Luminous Heart · September 27, 2026</title>
+  <meta name="description" content="An evening of music and zikr as we prepare our hearts for Salgirah Mubarak. Sunday, September 27, 2026.">
+  <meta property="og:title" content="The Luminous Heart · Salgirah Devotional Evening">
+  <meta property="og:description" content="An evening of music and zikr. Sunday, September 27, 2026. Hosted by Sabrina & Rehman.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="apple-touch-icon" href="../assets/icon-180.png">
+  <meta property="og:image" content="https://slakhani2.github.io/The-Luminous-Heart/assets/og-september-2026.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Gilda+Display&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --onyx: #1E1D1D;
+      --gold: #B48A48;
+      --forest: #2E4634;
+      --walnut: #84694D;
+      --beige: #E5D8CB;
+      --dove: #EBEAEA;
+      --cream: #F5F0E8;
+      --body: #4A3C28;
+      --warm: #FBF8F2;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --display: 'Gilda Display', Georgia, serif;
+      --sans: 'Karla', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--warm); color: var(--onyx);
+      font-family: var(--serif); font-weight: 300;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; min-height: 100svh; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: linear-gradient(170deg, #141313 0%, #2A2318 45%, #4A3A2A 100%);
+      color: var(--cream); padding: 3rem 1.5rem;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; opacity: 0.55;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23B48A48' stroke-width='0.5' opacity='0.14'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+    }
+    .hero::after {
+      content: ""; position: absolute; left: 50%; top: 32%; width: 640px; height: 640px;
+      transform: translate(-50%, -50%); border-radius: 50%;
+      background: radial-gradient(circle, rgba(180,138,72,0.16) 0%, transparent 68%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 620px; opacity: 0; transform: translateY(30px); transition: opacity 1.3s cubic-bezier(.22,1,.36,1), transform 1.3s cubic-bezier(.22,1,.36,1); }
+    body.loaded .hero-inner { opacity: 1; transform: none; }
+    .eyebrow { font-family: var(--sans); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); }
+    .hero .eyebrow { margin-bottom: 2rem; }
+    .crest { width: 112px; height: 112px; margin: 0 auto 1.8rem; display: block; filter: drop-shadow(0 0 18px rgba(180,138,72,0.25)); }
+    .divider img { width: 22px; height: 22px; opacity: 0.85; }
+    footer .mark { width: 40px; height: 40px; margin: 0 auto 1rem; display: block; opacity: 0.8; }
+    .hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.5rem, 7vw, 4.2rem); line-height: 1.12; color: var(--cream); }
+    .rule { width: 50px; height: 1px; background: var(--gold); opacity: 0.6; margin: 1.5rem auto; }
+    .hero .lede { font-size: 1.35rem; font-style: italic; color: var(--dove); line-height: 1.6; }
+    .hero .sub { font-size: 1.05rem; color: rgba(235,234,234,0.7); margin-top: 0.4rem; line-height: 1.6; }
+    .hero .when { margin-top: 3rem; }
+    .hero .date { font-family: var(--display); font-size: 1.6rem; }
+    .hero .year { font-family: var(--sans); font-weight: 300; font-size: 0.8rem; letter-spacing: 0.18em; color: var(--gold); margin-top: 0.5rem; }
+    .hero .scroll { position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); color: var(--gold); opacity: 0.6; font-size: 1rem; animation: bob 2.4s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
+
+    /* Body */
+    .wrap { max-width: 640px; margin: 0 auto; padding: 4rem 1rem 3rem; }
+    .section { text-align: center; }
+    .section .eyebrow { margin-bottom: 1.4rem; }
+    .section p { font-size: 1.2rem; line-height: 1.85; color: var(--onyx); }
+    .section p.note { font-size: 1.05rem; font-style: italic; color: var(--walnut); margin-top: 1.1rem; line-height: 1.75; }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 2.6rem 0; }
+    .divider i { width: 40px; height: 1px; background: var(--gold); opacity: 0.4; }
+    .divider span { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.3em; }
+    .sched { max-width: 420px; margin: 0 auto; }
+    .sched .row { display: flex; gap: 1rem; text-align: left; padding: 0.75rem 1rem; margin-bottom: 0.45rem; border: 1px solid rgba(132,105,77,0.22); border-radius: 10px; background: #FFFDF9; }
+    .sched .tm { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; color: var(--gold); min-width: 62px; padding-top: 0.3rem; }
+    .sched .ev { font-family: var(--display); font-size: 1.08rem; }
+    .sched .ds { font-size: 0.9rem; font-style: italic; color: var(--walnut); }
+    .hosts .name { font-family: var(--display); font-size: 1.25rem; }
+    .hosts p.note { margin-top: 0.4rem; font-size: 0.98rem; }
+
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade.in { opacity: 1; transform: none; }
+
+    /* Program */
+    .program-head { margin-bottom: 1.6rem; }
+    .program-head p { font-size: 0.95rem; font-style: italic; color: var(--walnut); }
+    .legend { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.9rem; font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .legend i { width: 14px; height: 3px; background: var(--gold); opacity: 0.7; border-radius: 2px; }
+
+    .item { margin-bottom: 0.7rem; }
+    .card { border: 1px solid rgba(132,105,77,0.22); border-radius: 12px; background: #FFFDF9; transition: border-color 0.3s, background 0.3s; }
+    .item.open .card { background: var(--cream); border-color: rgba(180,138,72,0.45); }
+    .head { width: 100%; text-align: left; display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.95rem 1.1rem; }
+    .head[disabled] { cursor: default; }
+    .num { flex-shrink: 0; margin-top: 0.2rem; font-family: var(--sans); font-weight: 500; font-size: 0.55rem; letter-spacing: 0.08em; color: var(--cream); background: var(--walnut); padding: 0.14rem 0.42rem; border-radius: 4px; min-width: 1.5rem; text-align: center; }
+    .item.zikr .num { background: var(--forest); }
+    .head .t { flex: 1; }
+    .title { font-family: var(--display); font-size: 1.08rem; color: var(--onyx); line-height: 1.3; }
+    .subtitle { font-size: 0.9rem; font-style: italic; color: var(--walnut); margin-top: 0.05rem; }
+    .who { font-family: var(--sans); font-weight: 300; font-size: 0.66rem; color: var(--walnut); margin-top: 0.3rem; letter-spacing: 0.02em; }
+    .who b { font-weight: 400; }
+    .chev { color: var(--gold); font-size: 0.95rem; margin-top: 0.2rem; transition: transform 0.3s; }
+    .item.open .chev { transform: rotate(180deg); }
+
+    .body { display: none; padding: 0 1.1rem 1.2rem; }
+    .item.open .body { display: block; }
+    .meaning { font-size: 1rem; line-height: 1.7; color: var(--body); }
+    .meaning + .meaning { margin-top: 0.6rem; }
+    .callout { margin-top: 0.9rem; padding: 0.75rem 0.9rem; border-left: 3px solid rgba(46,70,52,0.5); background: rgba(46,70,52,0.05); border-radius: 0 8px 8px 0; }
+    .callout .lbl { display: block; font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.25rem; }
+    .callout p { font-size: 0.92rem; line-height: 1.65; color: var(--body); font-style: italic; }
+    details.origins { margin-top: 0.9rem; }
+    details.origins summary { list-style: none; cursor: pointer; font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 0.4rem; }
+    details.origins summary::-webkit-details-marker { display: none; }
+    details.origins summary::after { content: "+"; font-size: 0.8rem; }
+    details.origins[open] summary::after { content: "\2013"; }
+    details.origins p { margin-top: 0.5rem; font-size: 0.92rem; line-height: 1.65; color: var(--walnut); font-style: italic; }
+    details.origins p + p { margin-top: 0.45rem; }
+
+    .part { margin-top: 1.4rem; }
+    .part-title { font-family: var(--display); font-size: 0.95rem; color: var(--onyx); padding-bottom: 0.35rem; border-bottom: 1px solid rgba(180,138,72,0.35); }
+    .part-title small { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-right: 0.5rem; }
+    .part-note { font-size: 0.9rem; font-style: italic; color: var(--walnut); line-height: 1.6; margin-top: 0.4rem; }
+    .verses { margin-top: 1.2rem; }
+    .verses + .verses { margin-top: 0.4rem; }
+    .verse { padding: 0.55rem 0.7rem 0.55rem 0.85rem; margin-bottom: 0.4rem; border-left: 3px solid transparent; border-radius: 0 6px 6px 0; }
+    .verse.ch { border-left-color: rgba(180,138,72,0.6); background: rgba(180,138,72,0.07); }
+    .verse .tag { display: block; font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+    .verse .l { font-family: var(--display); font-size: 1rem; line-height: 1.6; color: var(--onyx); white-space: pre-line; }
+    .verse .m { font-size: 0.86rem; font-style: italic; color: var(--walnut); line-height: 1.6; margin-top: 0.2rem; white-space: pre-line; }
+
+    .break { display: flex; align-items: center; gap: 0.8rem; margin: 1.2rem 0; color: var(--walnut); }
+    .break i { flex: 1; height: 1px; background: rgba(132,105,77,0.3); }
+    .break span { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; }
+
+    footer { background: linear-gradient(180deg, transparent 0%, var(--beige) 100%); padding: 3rem 1rem 2.2rem; text-align: center; }
+    footer .dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 1.4rem; }
+    footer .dots i { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); opacity: 0.45; }
+    footer p { font-size: 0.95rem; font-style: italic; color: var(--walnut); opacity: 0.8; }
+
+    @media (max-width: 480px) {
+      .wrap { padding-top: 3rem; }
+      .section p { font-size: 1.1rem; }
+      .head { padding: 0.85rem 0.95rem; }
+      .body { padding: 0 0.95rem 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade, .hero-inner { transition: none; opacity: 1; transform: none; }
+      .hero .scroll { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="crest" src="../assets/icon.svg" alt="">
+      <div class="eyebrow">You are warmly invited</div>
+      <h1>The Luminous Heart</h1>
+      <div class="rule"></div>
+      <p class="lede">An evening of music and zikr</p>
+      <p class="sub">as we prepare our hearts for Salgirah Mubarak<br>of our beloved Hazar Imam</p>
+      <div class="when">
+        <div class="date">Sunday, September 27</div>
+        <div class="year">5:15 PM</div>
+      </div>
+    </div>
+    <div class="scroll">&#9662;</div>
+  </section>
+
+  <main class="wrap">
+    <div class="section fade">
+      <div class="eyebrow">The Invitation</div>
+      <p>As we prepare our hearts for Salgirah Mubarak of our beloved Hazar Imam, we invite you to an evening of devotional music and remembrance. Together we will sing, remember, and open our hearts in the company of kindred spirits.</p>
+      <p class="note">Come in comfortable clothing, ready to sing along.<br>Please arrive a few minutes early so we may begin together.</p>
+    </div>
+
+    <div class="divider"><i></i><img src="../assets/icon.svg" alt=""><i></i></div>
+
+    <div class="section fade">
+      <div class="eyebrow">The Evening</div>
+      <div class="sched">
+        <div class="row"><div class="tm">5:15 PM</div><div><div class="ev">Dua</div><div class="ds">Opening prayer together</div></div></div>
+        <div class="row"><div class="tm">5:30 PM</div><div><div class="ev">Dinner</div><div class="ds">A shared meal to nourish body and spirit</div></div></div>
+        <div class="row"><div class="tm">6:15 PM</div><div><div class="ev">Music &amp; Zikr</div><div class="ds">Devotional songs and remembrance</div></div></div>
+      </div>
+    </div>
+
+    <div class="divider"><i></i><img src="../assets/icon.svg" alt=""><i></i></div>
+
+    <div class="section hosts fade">
+      <div class="eyebrow">Your Hosts</div>
+      <div class="name">Sabrina &amp; Rehman</div>
+      <p class="note">We look forward to welcoming you into our home.</p>
+    </div>
+
+    <div class="divider"><i></i><img src="../assets/icon.svg" alt=""><i></i></div>
+
+    <div class="section program-head fade">
+      <div class="eyebrow">The Program</div>
+      <p>Tap each piece to see its meaning, lyrics, and translations.</p>
+      <div class="legend"><i></i> Sing along</div>
+    </div>
+
+    <div id="program"></div>
+  </main>
+
+  <footer>
+    <img class="mark" src="../assets/icon.svg" alt="">
+    <p>The Luminous Heart &middot; Salgirah 2026</p>
+  </footer>
+
+<script>
+const PROGRAM = [
+  {
+    title: "Welcome", subtitle: "", performer: "Sabrina & Rehman",
+    meaning: "A moment to arrive fully, settle in, and set our intention for the evening. There will be breaks between pieces, so if you need to step out, please wait until the end of the song or zikr.",
+    parts: [],
+  },
+  {
+    title: "Bismillah", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Bismillah” means “In the name of God.” It is the invocation Muslims use to mark the beginning of any action, journey, or speech. The song celebrates the peace, security, and grace that come when we surrender our endeavours to the Creator right from the start. Rather than a ritual phrase, the lyrics frame Bismillah as a key to divine protection, blessings (barakat), and a sanctuary against the chaos of the material world.",
+    connection: "Beginning with the name of God mirrors the Ismaili practice of reciting Bismillah ir-Rahman ir-Rahim before any task, prayer, or assembly. It is a continuous reminder for the murid to align intellect and action with the grace, mercy, and presence of the Imam-of-the-Time.",
+    origins: ["Composed and produced by the brother duo Salim and Sulaiman Merchant for Season 3 (2013) of Coke Studio India, with lyrics by Irfan Siddiqui. It pairs the raw folk voice of Kailash Kher with the soaring qawwali style of Munawar Masoom, layering harmoniums and claps over modern bass, drums, and guitar."],
+    parts: [
+      { title: "The Divine Beginning", note: "A simple invocation opens the door to absolute grace.", verses: [
+        { t: "Barqaton ka paigham mile,\nKehne se: La Ilaha illallah.", m: "A message of infinite blessings is received simply by proclaiming: There is no deity but the One God." },
+        { t: "Rehmaton ka salaam mile,\nBas kehne se Bismillah.", m: "A greeting of divine mercy descends upon the soul, just by invoking the name of God." },
+        { t: "Bismillah, Bismillah, Bismillah...\nTere naam se shuru hua, tere naam pe khatam lillah.", m: "In the name of God! My journey began with Your name, and for the sake of God, it will reach completion in Your name.", ch: true },
+      ]},
+      { title: "The Reassurance of Prayer", note: "A rhythmic guide for the heart on where to point its vulnerability.", verses: [
+        { t: "Dua jis cheez ki keejie,\nToh bas Allah se keejie.", m: "Whatever it is that you choose to pray for, pray for it only from the Creator.", ch: true },
+        { t: "Shuru jis kaam ko keejie,\nToh Bismillah se keejie.", m: "Whatever task or labour you set out to begin, begin it always with the name of God.", ch: true },
+        { t: "Mushqilein aasaan hui saari,\nAafat tal gayi.", m: "All hardships immediately dissolve, and every approaching calamity is turned away.", ch: true },
+      ]},
+      { title: "The Letter from the Heart", note: "The human heart writes its innermost wishes to the Divine.", verses: [
+        { t: "Thodi hain farmaaishein,\nJo ho zara gunjaaishein.", m: "My desires and requests are small, hoping there is a little room for mercy." },
+        { t: "Naa koi majboor ho,\nBarsa de jo tu noor toh.", m: "Let no one remain helpless or broken; simply rain down Your divine, illuminating light upon us." },
+        { t: "Iss lifaafe pe likha...\nIss lifaafe pe likha hai dil se maine Bismillah.", m: "Upon the envelope of my soul, I have written from the very depths of my heart: In the name of God." },
+      ]},
+    ],
+  },
+  {
+    title: "Aaqa", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Aaqa” means “Master,” “Lord,” or “Protector.” In Sufi music it is a majestic song of hamd (praise of God) and naat (devotion to the Prophet). It describes the vulnerability of a human being wandering through a confusing, dark world, discovering that their only immovable anchor is the Divine. It touches on tawakkul (absolute reliance on God) and gratitude for the silent blessings that shape our lives.",
+    connection: "The song embodies absolute spiritual surrender (tawakkul) and an intense longing for a guide and protector. In Ismaili thought, this is the soul’s unwavering devotion and constant reliance on the guidance of the living Imam-of-the-Time.",
+    origins: ["The definitive version was released in 2016 in the premiere episode of Coke Studio Pakistan, Season 9. Co-composed and produced by Sami Yusuf, it features a powerhouse duet between Abida Parveen, the queen of Sufi music, and classical vocalist Ali Sethi. Qawwali hand-claps and harmoniums are blended with sweeping orchestration into a wave of spiritual ecstasy."],
+    parts: [
+      { title: "The Divine Call", note: "The soul acknowledges its weakness and calls out for refuge.", verses: [
+        { t: "Aaqa, mera koi nahi hai tere siwa,\nTu hi hai aasra mera, tu hi hai khuda.", m: "O Master, I have no one in this entire universe besides You. You are my ultimate sanctuary, and You are my God.", ch: true },
+        { t: "Karam ki nazar ho, nigaah-e-karam ho,\nMita de mere gham, mita de mere gham.", m: "Cast Your eye of mercy upon me, look at me with grace. Dissolve all my worldly sorrows, and lift my burdens." },
+        { t: "Main bhatka hua hoon, tu rasta dikha de,\nMujhe apni chahat ka amrit pila de.", m: "I am wandering lost in the dark, please show me the path. Quench my spiritual thirst with the nectar of Your pure love." },
+      ]},
+      { title: "The Ecstasy of Devotion", note: "The overwhelming joy (wajd) when the heart connects completely to the Divine.", verses: [
+        { t: "Har saans mein tera naam rahe,\nLab pe mere bas yahi kalaam rahe.", m: "Let Your name vibrate through every breath I take. Let this prayer be the only speech that ever crosses my lips." },
+        { t: "Tan rang diya, mann rang diya,\nSufiyan de rang vich rang diya.", m: "My body has been drenched, my inner mind has been drenched, I am completely coloured in the spiritual hues of the Sufis." },
+      ]},
+      { title: "Total Surrender", note: "True freedom is found only by surrendering the ego to the Divine.", verses: [
+        { t: "Tu hi moko raah dikhawe,\nJab jag sara thukrawe.", m: "You are the only one who guides me and holds my hand when the entire world rejects and abandons me." },
+        { t: "Aaqa, tere dar pe jhuka hoon,\nAb main na darta, ab main na rota.", m: "O Master, now that I have bowed my head at Your doorstep, I no longer fear the world, and my soul no longer weeps." },
+        { t: "Pir meraya, saiyan meraya,\nAaqa ji, ae way Allah waliyan di sada ji.", m: "O my guide, O my eternal master! This is the timeless, echoing call of all those who walk the path of God." },
+      ]},
+    ],
+  },
+  {
+    title: "Arziyan", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Arziyan” is the plural of arzi: petitions, supplications, heartfelt requests. The song is a vulnerable dialogue between a broken human soul and the Creator. The singer brings no physical offerings, only their life struggles and flaws worn openly on their face. It explores unconditional surrender (fana), the illusion of material desire, and the realisation that the presence we seek across the world is found within the heart.",
+    connection: "Placing all silent petitions before the Divine mirrors the inner state of giryari: crying out in spiritual longing and humility. It reflects the Ismaili understanding that the Divine Light (Noor) is an internal sanctuary, illuminating the seeker from within.",
+    origins: ["Composed by A.R. Rahman for the 2009 film Delhi-6, with lyrics by Prasoon Joshi drawing on Sufi idioms and mystic poets like Kabir. The filmmaker has said the melody came to Rahman in an early-morning dream. Sung as a duet by Javed Ali and Kailash Kher, it pairs qawwali harmoniums, tabla grooves, and hand-claps with cinematic orchestration."],
+    parts: [
+      { title: "The Silent Petition", note: "The seeker surrenders all pretence and brings their vulnerabilities to the doorstep of the Divine.", verses: [
+        { t: "Arziyan saari mein chehre pe likh ke laaya hoon,\nTumse kya maangoon mein, tum khud hi samajh lo.", m: "I have brought all my silent petitions written clearly across my face. What can I possibly ask of You? You already understand everything." },
+        { t: "Ya Maula... Maula Maula Maula ya Maula.\nMarammat mukaddar ki kar do Maula.", m: "O Master... O Master, my Lord. Please mend my broken destiny, my Lord.", ch: true },
+        { t: "Jo bhi tere darr aaya, jhukne jo sarr aaya,\nMastiyan piye sabko, jhoomta basarr aaya.", m: "Whoever arrives at Your doorstep, whoever bows their head before You, drinks the sweet nectar of ecstasy and leaves in a dancing trance." },
+      ]},
+      { title: "The Ocean of Grace", note: "The Divine accepts everyone, regardless of their flaws.", verses: [
+        { t: "Pyaas hai koee moko, amrit ka dhaar de do,\nAage khada hoon moko, darshan ka dhaar de do.", m: "My soul is desperately thirsty, grant me a stream of Your immortal nectar. I stand waiting before You, give me a single glimpse of Your Divine Presence." },
+        { t: "Kar de karam Maula, kar de karam Maula,\nKhali hai kaasa mera, bhar de karam Maula.", m: "Bestow Your grace, my Lord, bestow Your grace. The bowl of my soul is completely empty, fill it with Your absolute mercy.", ch: true },
+        { t: "Oot ke darr se tere, koi na khali gaya,\nSirf teri rehmaton ka, noor hi noor barsa.", m: "No one has ever walked away from Your doorstep empty-handed. From Your presence, only the brilliant light (Noor) of divine mercy rains down." },
+      ]},
+      { title: "The Internal Fragrance", note: "Peace and the Beloved reside within the seeker’s own heart.", verses: [
+        { t: "Aankhein jo kholein moko, dikhta hi noor hai,\nMann ke mandir mein mere, tu hi huzoor hai.", m: "When my inner eyes finally open, I see nothing but Your divine light. In the sacred temple of my mind, You are the absolute sovereign." },
+        { t: "Kasturi jaisa tu, khushboo bikhere,\nDhoondhe jahan mein moko, tu toh hai mere.", m: "You are like musk, scattering an enchanting fragrance everywhere. While the world searches for You across the universe, You reside right here inside me." },
+        { t: "Maula Maula Maula ya Maula,\nMarammat mukaddar ki kar do Maula.", m: "O Master, my Lord. Please mend my broken destiny, my Lord.", ch: true },
+      ]},
+    ],
+  },
+  {
+    title: "Bood Ali Bood", keepParts: true, subtitle: "Persian Qasida · Ta Surat e Paivand", performer: "Saurabh & Tejus",
+    meaning: "“Bood Ali Bood” means “Ali was present.” This revered Persian qasida (ode of praise) explores esoteric Islamic metaphysics (irfan). It describes Hazrat Ali not only as a historical figure but as the cosmic manifestation of Divine Light (Noor) that existed before physical creation. The poetry travels through history, showing that while empires, prophets, and universes cycled through time, the reality of Divine Guidance was always present.",
+    connection: "The qasida mirrors the core Shi‘i Ismaili doctrine of the Eternal Noor of Imamat: the spiritual essence and light of the Imam existed before the creation of the physical world and continues to guide humanity through the living Imam-of-the-Time.",
+    origins: ["The text is traditionally attributed to the 13th-century mystic poet Shams Tabrizi, spiritual mentor of Jalaluddin Rumi. For generations it has been a foundational part of the devotional repertoire of Central Asian, Afghan, and South Asian Ismaili communities, performed with rubab, daf, and harmonium. Recent revivals have added ambient and electronic layers while preserving its meditative core."],
+    parts: [
+      { title: "Pre-Cosmic Existence", note: "The Eternal Noor: Ali’s essence existed long before the material universe took shape.", verses: [
+        { t: "Ta surat-e-paivand-e-jahan bood, Ali bood,\nTa naqsh-e-zamin bood-o-zaman bood, Ali bood.", m: "Before the universe took a physical form, Ali was present. Before the earth and time itself were sketched out, Ali was present.", ch: true },
+        { t: "An shahi ki vali bood-o-vasi bood, Ali bood,\nSultan-e-sakha bood-o-vajood bood, Ali bood.", m: "The sovereign who stood as the spiritual guardian and true legatee was Ali. The king of absolute generosity and existence itself was Ali." },
+      ]},
+      { title: "The Cycle of Prophets", note: "The Constant Guide: the same essence accompanied the prophets from Adam to Noah.", verses: [
+        { t: "An ka shenaasand ki anasir az oost,\nAn nafs-e-nabi, makhzan-e-asraar, Ali bood.", m: "Those who truly see understand that the very elements of creation stem from him. The true soul of the Prophet and the treasure-house of divine mysteries was Ali." },
+        { t: "Nuh ki najaat daad ze tufan, Ali bood,\nAn moajiza-e-khas-e-khuda-vandan, Ali bood.", m: "The one who granted Noah salvation from the great flood was Ali. The special, living miracle of the Lord of the universe was Ali." },
+      ]},
+      { title: "The Ultimate Certainty", note: "Zikr: unwavering conviction and continuous remembrance.", verses: [
+        { t: "In nuktah-e-haq nazar kon, moti-e-dum haqiqat,\nAz rooy-e-yaqin bar hamein maujood, Ali bood.", m: "Fix your vision upon this divine truth, capture this reality with every single breath. With absolute certainty, above all that exists, Ali was present." },
+        { t: "Ta surat-e-jan bood, Ali bood,\nTa zamin-o-boom bood, Ali bood.", m: "As long as the spirit of life existed, Ali was present. As long as the earth and the heavens remained, Ali was present.", ch: true },
+      ]},
+    ],
+  },
+  {
+    title: "Ali Mowla + Man Kunto Maula", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Ali Mowla” means “Ali, our master and guide.” Man Kunto Maula comes from the words of the Prophet Muhammad at Ghadir Khumm. The poet Amir Khusrau set these words to music in the 13th century, and it is often called the very first qawwali. This is our first big sing-along of the night.",
+    parts: [
+      { title: "The Core Line", verses: [
+        { t: "Man kunto maula, fa Ali-un maula", m: "For whoever I am master, Ali is their master", ch: true },
+      ]},
+    ],
+  },
+  { kind: "break", label: "Short break · 10 minutes" },
+  {
+    title: "Zikr", subtitle: "", performer: "Alisa & Salim", zikr: true,
+    meaning: "“Zikr” means remembrance, or invocation. Rather than a static song, a zikr is a continuous, meditative repetition of divine names, sacred attributes, and prayers. It guides the listener through spiritual healing, comfort in hardship, and deep gratitude (shukran lillah) to the Creator, exploring divine protection (mushkil asaan), surrender, and the realisation that the light of guidance is ever-present.",
+    connection: "This selection strings together central phrases from the Ismaili Tariqah, including the Salawat, Nad-e-Ali, and direct supplications to the Guide. It is a sonic preparation for Bandagi, centring the murid’s intellect and breath on the continuous presence of the Hazir Imam.",
+    origins: [
+      "Allahumma salli ‘ala Muhammadin wa aale Muhammad honours the continuous chain of Divine Guidance. Because the Imam is the perfect mirror (mazhar) of Divine Light, blessings sent upon his lineage reflect back onto the soul of the murid.",
+      "Ya Ali tu reham kar is a personal appeal to the Lord of Grace (Mawla), recognising the Imam as the distributor of mercy and grace (fazal). Ya Ali aghisani invokes Mushkil Kusha, the solver of problems, whose authority shields the seeker from outer hardship and inner darkness.",
+      "Awwal tu, Aakhar tu reflects the batini (esoteric) reality that the Noor of Imamat transcends time and space, both the visible outer guide and the hidden inner reality. Ya Hayyul Qayyum links the eternal attributes of God with the living presence of the Imam-of-the-Time, and Ya Ale Nabi celebrates the unbroken lineage of the Imamat. Shukran Lillah is the final expression of shukrana for the blessing of the living path of guidance.",
+    ],
+    parts: [
+      { title: "The Zikr", verses: [
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "O Allah, shower Your blessings and peace upon Prophet Muhammad and his radiant family", ch: true },
+        { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "O Hazrat Ali, bestow Your mercy upon us. O my Master, shower us with Your grace", ch: true },
+        { t: "Ya Rahman, ya Raheem", m: "O the Most Gracious, O the Most Merciful" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Ali aghisani, ya Ali adrikani\nHar bala tu door kar, Mushkil Kusha Maula Ali", m: "O Hazrat Ali, come to my assistance and hold my hand. Drive away every calamity and hardship, O Dispeller of Difficulties", ch: true },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Awwal tu, Aakhar tu, Zaahir tu, Baatin tu", m: "You are the First and the Last. You are the Manifest Outer Reality and the Deeply Hidden Secret" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Hayyul Qayyum, ya Aliyul Azeem\nYa Sahib az-Zamaan, ya Hazir Imam", m: "O the Ever-Living, the Self-Subsisting Sustainer. O Supreme Lord of the Age, O our Present, Living Imam" },
+        { t: "Ya Hayyul Qayyum, ya Aliyul Azeem\nYa Sahib az-Zamaan, ya Hazir Imam", m: "", ch: true },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Ya Ale Nabi, Aulaad-e-Ali\nYa Mushkil Kusha, ya Hazir Imam", m: "O Family of the Holy Prophet, O noble Descendants of Hazrat Ali, O Dispeller of all hardships, O our Living Guide" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Shukran Lillah, Alhamdulillah", m: "All gratitude is due to God alone, all praise belongs to Allah" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+      ]},
+    ],
+  },
+  {
+    title: "Dhan Dhan Aajno", keepParts: true, subtitle: "Salgirah Ginan", performer: "Khadij",
+    meaning: "“Dhan Dhan Aajno” means “Blessed, blessed is this day.” This ginan (sacred hymn) is a joyous celebration of spiritual attainment and divine presence. It expresses gratitude for finding the true spiritual master, Mawla Ali, which purifies the soul and washes away the sins of past ages. It reminds us to turn away from the illusions of a deceptive material world, focus on virtuous deeds, and celebrate the union between the soul and the Divine.",
+    connection: "This ginan is traditionally recited on auspicious occasions like Salgirah (the birthday of the Imam) and Khushali. It celebrates the manifestation of the Imam-of-the-Time in human form, reminding the Jamat of its eternal link to the Living Guide.",
+    origins: ["Composed by the revered 14th-century Ismaili missionary and saint Pir Sadardin. For centuries ginans were preserved orally and written in the Khojki script. The melody draws on South Asian folk and raga traditions and is traditionally sung in Jamatkhana or community gatherings."],
+    parts: [
+      { title: "The Auspicious Finding", note: "The refrain: the great fortune of encountering the true master.", verses: [
+        { t: "Eji Dhan dhan aajno daadlo re,\nAme Ali var paaya ji.", m: "O my brother! Continuous blessings and congratulations on this glorious day, for we have found our Lord, Mawla Ali.", ch: true },
+        { t: "Chaar jugna kasamal paapaj taaliya ji,\nHetno melaavdo aapnna satgursu(n) kije ji.", m: "The accumulated stains and sins of all the ages have been washed away. Let us conduct a beautiful assembly of love with our true guide." },
+      ]},
+      { title: "Transcending the Material World", note: "Cross over the illusions of the temporary universe by holding onto the holy name.", verses: [
+        { t: "Dhutaaro sansaar parle chhodi mukije,\nThagaaro sansaar Shahne naame tarijiye.", m: "Shun and abandon this fraudulent material world. You will safely cross to the shore of liberation through the sacred name of the Lord." },
+        { t: "Enne sansaare bhala sukaram kaam kije,\nAalmot gadh paatann delam desh ji.", m: "While living in this fleeting world, perform virtuous and righteous deeds. Remember the stronghold of Alamut where the Lord manifested." },
+      ]},
+      { title: "The Gathering of the Jamat", note: "The Lord arrives to sit directly amongst the unified congregation.", verses: [
+        { t: "Chovatde chovatde aapnna Sami raajo aave ji,\nAavi kari jumlaaji-maa(n) mali kari betha ji.", m: "My Sovereign Lord comes crossing through every path and public square. Having arrived, he gracefully sits amidst the entire gathered Jamat." },
+        { t: "Shaamli bajaare aapnno Sami raajo ditha ji,\nSona-ne singaasanne aapnno Sami raajo betha ji.", m: "We caught sight of our glorious Sovereign Lord in the spiritual bazaar, where our King graces a magnificent throne of pure gold." },
+      ]},
+    ],
+  },
+  {
+    title: "Yeh Tune Kya Kiya", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Yeh Tune Kya Kiya” means “What is this that you have done?” On the surface it captures the overwhelming feeling of falling hopelessly in love, but beneath lies a deep allegory of Sufi love (ishq-e-haqiqi). The lyrics describe a state where the lover’s ego shatters, leaving them defenceless and transformed by the presence of the Beloved. It explores spiritual madness (junoon), total dependency, and the confusion that grips a soul when it surrenders its will to a higher power.",
+    connection: "Total surrender and spiritual intoxication mirror the intense, personal relationship between seeker and guide. The murid willingly submits heart and mind to be reshaped by the grace and love of the Imam.",
+    origins: ["Composed by Pritam for the 2013 film Once Upon a Time in Mumbai Dobaara, with lyrics by Rajat Arora infused with classical Sufi vocabulary. Its spiritual gravity comes from the vocals of Pakistani classical singer Javed Bashir, drawing on his qawwali training. Qawwali hand-claps and harmonium accents meet a contemporary pop-rock arrangement."],
+    parts: [
+      { title: "The Spiritual Intoxication", note: "The soul becomes captive to the gaze of the Beloved, throwing away all caution.", verses: [
+        { t: "Ishq mein tere kohe-nida ko door kiya,\nMaine toh khudi ko khud se door kiya.", m: "In my love for you, I silenced every distant voice of warning. I have completely separated my own ego from myself." },
+        { t: "Ishq hai kya yeh tune dikha diya,\nDeewane ko tere aur deewana bana diya.", m: "You have shown me what true, absolute love really means. You have taken someone already madly devoted and driven them even deeper into madness." },
+        { t: "Yeh tune kya kiya, kya kiya, kya kiya...\nMera dil gaya, dil gaya, dil gaya.", m: "What is this that you have done to me? My heart is completely gone, vanished into your presence.", ch: true },
+      ]},
+      { title: "The Heart’s Sanctuary", note: "The absolute safety found only at the feet of the Beloved.", verses: [
+        { t: "Darr pe tere aake ruk gaye qadam mere,\nTu hi ab thikaana mera, tu hi hai khuda.", m: "My wandering feet have finally come to rest at your doorstep. You are my only sanctuary now, and you are my ultimate reality.", ch: true },
+        { t: "Karam ki nazar ho, nigaah-e-karam ho,\nMita de mere gham, mita de mere gham.", m: "Cast your eye of mercy upon me, look at me with grace. Dissolve all my worldly sorrows, and lift my burdens.", ch: true },
+      ]},
+      { title: "The Complete Transformation", note: "The lover no longer belongs to the material world, entirely coloured in the identity of the Beloved.", verses: [
+        { t: "Tan rang diya, mann rang diya,\nTere rang mein khud ko rang diya.", m: "My body has been coloured, my inner mind has been coloured, I have drenched my entire existence in your divine hue." },
+        { t: "Ab main na raha mera, sab kuch tera hua,\nSufiyan de rang vich rang diya.", m: "I no longer belong to myself, everything I am is now yours. I am completely coloured in the spiritual aura of the Sufis." },
+      ]},
+    ],
+  },
+  { kind: "break", label: "Short break · 10 minutes" },
+  {
+    title: "Ali Da Malang", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "A “malang” is a wandering dervish, mystic, or free spirit completely detached from the material world, social status, and possessions. The song is a passionate anthem of spiritual intoxication, declaring joyous allegiance to Hazrat Ali. Being a malang is not madness but the ultimate stage of liberation, where the ego dissolves into love of the Divine. The lyrics celebrate the “Haideri colour” (haideri rang), a metaphor for being drenched in the aura, courage, and knowledge of Ali.",
+    connection: "Becoming a malang mirrors the inner transformation of the murid who surrenders their identity to achieve spiritual proximity to the Guide, anchoring the soul to the timeless Light (Noor) of the Imam.",
+    origins: ["This Sufi manqabat (devotional poem) was popularised globally by Ustad Nusrat Fateh Ali Khan on his 1991 album Magic Touch. It is a high-energy dhamaal, built to induce ecstasy and movement (wajd), pairing classical Persian invocations (the Imam-e-Manasto poetry of Amir Khusrau) with raw Punjabi folk refrains over frantic harmonium, rapid claps, and a thumping tabla-dholak beat."],
+    parts: [
+      { title: "The Cosmic Alliance", note: "A classical Persian hook of spiritual lineage bursts into the Punjabi declaration.", verses: [
+        { t: "Ali imam-e-manasto manam ghulam-e-Ali,\nHazaar jaan-e-girami fida-e-naam-e-Ali.", m: "Ali is the sovereign master of my destiny, and I am the humble servant of Ali. A thousand precious lives would I joyfully sacrifice for the sacred name of Ali." },
+        { t: "Ali da malang mein te Ali da,\nAli da malang mein te Ali da malang.", m: "I am the wandering mystic of Ali, yes, I belong to Ali! I am the free spirit completely lost in the love of Ali.", ch: true },
+      ]},
+      { title: "The Spiritual Hue", note: "The soul feels visibly altered and coloured by divine energy.", verses: [
+        { t: "Maula Ali naal nisbat meri,\nChar gaya menu haideri rang.", m: "My eternal soul shares an unbreakable, direct connection with Master Ali. I have been completely drenched and coloured in his radiant spiritual aura." },
+        { t: "Ghamo de toofana ich kinara Maula Ali ae,\nDukhiya de dilan da sahaara Maula Ali ae.", m: "In the violent, crashing storms of life’s grief, Master Ali is my safe harbour. For every broken and sorrowful heart, Master Ali is the ultimate sanctuary." },
+      ]},
+      { title: "The Continuous Remembrance", note: "An ecstatic peak of continuous chanting.", verses: [
+        { t: "Mera vird hai dam dam Ali Ali,\nSaqi laal qalander mast mast.", m: "With every single breath I take, my internal meditation is the name of Ali. I am beautifully intoxicated by the cup-bearer of divine truth.", ch: true },
+        { t: "Akhi ja malanga tu Ali Ali,\nKade vi na tutega tera eh sang.", m: "Keep chanting his name, O free spirit, keep calling out Ali, Ali! This sacred bond of yours will never be severed across eternity." },
+      ]},
+    ],
+  },
+  {
+    title: "Jugni Ji", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Jugni” comes from the Punjabi jugnu, meaning firefly. In traditional lyrics she is a free-spirited, wandering female persona who observes the beauty of nature, the depth of human emotion, and the struggle for love and freedom. In spiritual poetry Jugni transcends physical form: she is the divine spark, the spirit of life, the essence of the soul searching for truth. This “mystery woman” has been part of Punjabi folklore and Sufi oral tradition for centuries.",
+    connection: "Jugni is a metaphor for the soul carrying a divine spark (Noor) through a dark material world. This mirrors the Ismaili esoteric path (batin), where the murid’s goal is to awaken this internal light and reunite with the Divine Source.",
+    origins: ["Before the 1960s, Jugni was a loose device in oral folklore rather than a song. In 1965 the Pakistani folk icon Alam Lohar set these scattered Sufi fragments to a definitive rhythm and recorded Jugni on vinyl for the first time. His gold-disc hit became the template used today; his original was a pure, soaring prayer invoking God and the Sufi saints.", "Building on his father’s work, Arif Lohar composed the modern melody we recognise today, released in 2008, fusing Punjabi folk and Sufi poetry with contemporary arrangements."],
+    parts: [
+      { title: "The Sufi Invocation", note: "The 17th-century poetry (qalam) of Sultan Bahu, the spiritual foundation of the song.", verses: [
+        { t: "Alif Allah chambay di booti,\nTey meray murshid mann vich lai, Hoo.", m: "My spiritual master (murshid) has planted the fragrant jasmine seed of Divine Love within my heart. (Hoo is a Sufi chant invoking the presence of God.)" },
+        { t: "Ho nafi uss baat da paani dey kay,\nHar ragaay harjai, Hoo.", m: "This seed flourished inside me, nourished by modesty, selflessness, and total surrender. Now the Divine light flows through my every throbbing pulse." },
+        { t: "Ho joog joog jeevay mera murshid sohna,\nHatay jiss ay booti lai, Hoo.", m: "May my beautiful spiritual guide live for eternal ages, the one who breathed life into my soul and planted this divine spark." },
+        { t: "Pir meraya jugni ji,\nAe way Allah waliyan di jugni ji.", m: "Hail the protective spirit of my guide! This is the light of the firefly, the spirit of all those who truly belong to God.", ch: true },
+      ]},
+      { title: "The Journey of the Soul", note: "Jugni travels as a wandering spirit through the world.", verses: [
+        { t: "Oh jugni ishq de raste jaave,\nKidre dhokha hi na khaave.", m: "The wandering soul walks steadfastly down the pathway of divine love, praying she never gets deceived by the illusions of the material world." },
+        { t: "Jugni sochan de vich khoyi,\nDhoondhe kise de vich oh koi.", m: "The soul is deeply lost in contemplation. In every human being she meets, she is secretly searching for a glimpse of the Divine." },
+        { t: "Oh ishq de vich kamli hoyi,\nBhaaron hassi, andron royi.", m: "She has gone completely mad in her love for the Creator. To the outside world she smiles and laughs, but inside her soul weeps out of longing to reunite with God." },
+        { t: "Naale pak mohabbat kare saayi,\nPhiraay mereya jugni ji.", m: "She practises a love that is pure, untainted, and unconditional. Keep wandering, my beautiful free spirit!", ch: true },
+      ]},
+      { title: "The Internal Mantra", note: "It sounds like a celebratory hook, but it is a Sufi description of continuous, meditative breathing (zikr).", verses: [
+        { t: "Oh dum gutkoon, dum gutkoon kare,\nSaayi naal sabak wafa da padhe.", m: "With every breath (dum), the soul vibrates with devotion. It sits quietly, practising the lesson of absolute loyalty to the Creator.", ch: true },
+        { t: "Kise ne na vekhi jandi,\nKhwaja de darbaar te jaandi.", m: "No human eye can track the invisible path of the soul, but it travels directly to the spiritual courts of the great Sufi saints (Khwaja)." },
+        { t: "Sufiyan de rang vich rangi jandi,\nPir meraya jugni ji.", m: "Slowly, the soul gets entirely drenched in the vibrant aura of Sufism. Hail the spirit of my guide!", ch: true },
+      ]},
+    ],
+  },
+  {
+    title: "Bandeya Ho", subtitle: "", performer: "Saurabh & Tejus",
+    meaning: "“Bandeya” comes from banda: “O human,” or mankind. The song is a direct, urgent address to human consciousness, an emotional plea for humanity to shed its arrogance, look beyond artificial divisions of status, caste, and institutionalised religion, and recognise that all human beings are equal in the eyes of the Divine. It explores universal love, humility, and the awakening that comes when a person chooses raw humanity over judgemental structures.",
+    connection: "The plea to look past external structures and cultivate a pure heart aligns with the practice of Bandagi, where one must shed worldly ego and titles. It also reflects the Ismaili ethic of pluralism, recognising all of humanity as part of a single, universal soul.",
+    origins: ["The version that popularised this poetry belongs to the landmark 2007 Pakistani film Khuda Kay Liye, directed by Shoaib Mansoor. Composed by Rohail Hyatt (the pioneer behind Coke Studio) with Khawar Jawad, it blends a soft, melancholic rock arrangement with Eastern rhythms into an evergreen anthem of reflection."],
+    parts: [
+      { title: "The Sufi Confrontation", note: "Rooted in the 18th-century poetry of Bulleh Shah, written when his family attacked him for choosing a spiritual mentor from a lower caste.", verses: [
+        { t: "Bullah nu samjhawan aaiyaan,\nBheynaan tey bharjaiyaan.", m: "Bulleh Shah’s sisters and sisters-in-law came to lecture and scold him." },
+        { t: "Man lay Bulleya sada kehna,\nChhad day palla raaiyaan.", m: "They told him, “Listen to our advice, Bulleh! Leave the company of your spiritual guide, for he belongs to a lower working caste.”" },
+        { t: "Al nabi aulaad nabi nu,\nTu kyun leekaaiyan?", m: "They pleaded, “You are a high-born Syed, a descendant of the Prophet. Why do you bring shame upon our noble lineage?”" },
+        { t: "Sui ja do-zakh milay sazaiyaan,\nJo unhoo Syed sadaiyaan.", m: "Bulleh Shah replied, “Those who fixate on my high-born status will burn in hell. True nobility belongs to the soul, not your titles.”" },
+      ]},
+      { title: "Universal Equality", note: "The Creator sees the beauty of the heart rather than worldly constructs.", verses: [
+        { t: "Bandya ho, bandya ho...\nBandya tey dushman banday da.", m: "O human being! You have become the worst enemy of your fellow human beings.", ch: true },
+        { t: "Na kar bandya meri meri,\nNa teri na meri.", m: "Stop constantly shouting “This is mine! That is mine!” This material world belongs neither to you nor to me." },
+        { t: "Chaar dinaan da mela aethey,\nPhir mitti di dheri.", m: "Life is just a temporary four-day festival. In the end, we all turn into a simple mound of dust." },
+        { t: "Je tu rab nu paana ae,\nPehle dil nu saaf kar bandya.", m: "If your true goal is to find the Divine, you must first clean the hatred and arrogance from your own heart, O human." },
+      ]},
+      { title: "The Internal Awakening", note: "God lives inside human consciousness, not physical monuments.", verses: [
+        { t: "Masjid dha de, mandir dha de,\nDha de jo kujh dhanda.", m: "Tear down the mosques, tear down the temples, tear down every physical structure that divides people." },
+        { t: "Par kise da dil na dhawin,\nRab dilaan vich rehnda.", m: "But never break a human heart, because the true living presence of God resides within the heart." },
+        { t: "Bandya ho, bandya ho...\nSabu dilaan da tu raahi.", m: "O human being! You are meant to be a traveller passing through the hearts of everyone with love.", ch: true },
+      ]},
+    ],
+  },
+  {
+    title: "Dum Ali Ali Dum", subtitle: "Finale", performer: "Saurabh & Tejus",
+    meaning: "“Dum Ali Ali Dum” is a sacred chant where dum means breath, or the life force. The song describes a state of permanent meditation, where the seeker uses every incoming and outgoing breath to invoke the name and presence of Hazrat Ali. Rhythmic chanting becomes an internal vehicle to transcend worldly anxiety and enter complete tranquillity. It celebrates hama dum, with every single breath: continuous remembrance leads to an unbreakable bond with the Divine.",
+    connection: "Connecting the sacred name with the rhythm of breathing aligns with the personal, internal practice of dhikr within the Ismaili Tariqah, using one’s life force to remain continuously aware of the eternal presence (Noor) of the Imam-of-the-Time.",
+    origins: ["The best-known version is by classical and pop-rock vocalist Shafqat Amanat Ali, from his landmark 2008 debut solo album Tabeer. From the Patiala Gharana lineage, he delivers the traditional Persian and Punjabi verses with slow-burning intensity, moving from a calm acoustic guitar and harmonium intro into thumping classical percussion, like the crescendo of a live spiritual gathering."],
+    parts: [
+      { title: "The Constant Breath", note: "The soul uses its very life breath to maintain connection.", verses: [
+        { t: "Dum hama dum Ali Ali,\nDum hama dum Ali Ali.", m: "With every single breath I take, my soul chants Ali, Ali. With every breath, Ali, Ali.", ch: true },
+        { t: "Ali Shah-e-mardan, Imam-ul-Kabeera,\nKe ba’d az Nabi shudh basheer-ul-nazeera.", m: "Ali is the sovereign king of the brave, the supreme Guide, who stands as the announcer of glad tidings and divine warnings right after the Prophet." },
+      ]},
+      { title: "The Core of the Sacred Text", note: "The true mysteries of scripture are encapsulated within the master.", verses: [
+        { t: "Nukta-e-paa-e bismillah,\nSirr-e-sara ila-ilah.", m: "He is the hidden dot beneath the opening letter of the Bismillah. He is the innermost secret of the declaration of Divine Oneness." },
+        { t: "Awwal-e-naksh wal kalam,\nDum hama dum Ali Ali.", m: "He is the primary sketch of creation and the essence of the cosmic pen. With every single breath, my soul chants Ali, Ali.", ch: true },
+      ]},
+      { title: "The Sanctuary of Light", note: "The obscurities of the material world shatter when the soul finds this shelter.", verses: [
+        { t: "Shola-e-toor-e-kulkafa,\nShamm-e-faroz-e-inama.", m: "He is the blazing fire of ultimate truth witnessed at Mount Sinai. He is the brilliantly glowing candle illuminating all of divine bounty." },
+        { t: "Noor-e-numaayi zulmatam,\nPir meraya, Maula meraya.", m: "He is the majestic light that cuts through and exposes the deep darkness of the world. O my guide, O my eternal master!", ch: true },
+      ]},
+    ],
+  },
+];
+
+function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+function render() {
+  const root = document.getElementById("program");
+  let n = 0;
+  const html = PROGRAM.map((item) => {
+    if (item.kind === "break") {
+      return `<div class="break fade"><i></i><span>${esc(item.label)}</span><i></i></div>`;
+    }
+    n++;
+    const hasBody = !!(item.meaning || (item.parts && item.parts.length));
+    const who = item.performer ? `<b>${esc(item.performer)}</b>` : "";
+    const parts = (item.parts || []).map((p) => {
+      const verses = p.verses.map((v) => {
+        const tags = v.ch ? [`<span class="tag">&#9835; Sing along</span>`] : [];
+        return `<div class="verse${v.ch ? " ch" : ""}">${tags.join("")}<div class="l">${esc(v.t)}</div>${v.m ? `<div class="m">${esc(v.m)}</div>` : ""}</div>`;
+      }).join("");
+      if (item.keepParts) return `<div class="part">${p.title ? `<div class="part-title">${esc(p.title)}</div>` : ""}${p.note ? `<div class="part-note">${esc(p.note)}</div>` : ""}<div class="verses">${verses}</div></div>`;
+      return `<div class="verses">${verses}</div>`;
+    }).join("");
+    const body = hasBody ? `
+      <div class="body">
+        ${item.meaning ? `<p class="meaning">${esc(item.meaning)}</p>` : ""}
+        ${item.connection ? `<div class="callout"><span class="lbl">Ismaili connection</span><p>${esc(item.connection)}</p></div>` : ""}
+        ${item.origins ? `<details class="origins"><summary>About the song</summary>${item.origins.map(o => `<p>${esc(o)}</p>`).join("")}</details>` : ""}
+        ${parts}
+      </div>` : "";
+    return `
+      <div class="item fade${item.zikr ? " zikr" : ""}">
+        <div class="card">
+          <button class="head" ${hasBody ? 'aria-expanded="false"' : "disabled"}>
+            <span class="num">${n}</span>
+            <span class="t">
+              <span class="title">${esc(item.title)}</span>
+              ${item.subtitle ? `<div class="subtitle">${esc(item.subtitle)}</div>` : ""}
+              ${who ? `<div class="who">${who}</div>` : ""}
+            </span>
+            ${hasBody ? `<span class="chev">&#9662;</span>` : ""}
+          </button>
+          ${body}
+        </div>
+      </div>`;
+  }).join("");
+  root.innerHTML = html;
+
+  root.querySelectorAll(".head[aria-expanded]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".item");
+      const open = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+}
+
+render();
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll(".fade").forEach((el) => io.observe(el));
+
+requestAnimationFrame(() => setTimeout(() => document.body.classList.add("loaded"), 80));
+</script>
+</body>
+</html>
