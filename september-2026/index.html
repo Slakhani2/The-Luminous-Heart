@@ -130,12 +130,8 @@
     .verse { padding: 0.55rem 0.7rem 0.55rem 0.85rem; margin-bottom: 0.4rem; border-left: 3px solid transparent; border-radius: 0 6px 6px 0; }
     .verse.ch { border-left-color: rgba(180,138,72,0.6); background: rgba(180,138,72,0.07); }
     .verse .tag { display: block; font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-    .verse .tag.cue { color: var(--forest); }
     .verse .l { font-family: var(--display); font-size: 1rem; line-height: 1.6; color: var(--onyx); white-space: pre-line; }
     .verse .m { font-size: 0.86rem; font-style: italic; color: var(--walnut); line-height: 1.6; margin-top: 0.2rem; white-space: pre-line; }
-    .verse.interlude { text-align: center; padding: 0.3rem; margin: 0.3rem 0 0.5rem; }
-    .verse.interlude span { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(132,105,77,0.7); }
-    .pending { margin-top: 0.9rem; padding: 0.6rem 0.8rem; border: 1px dashed rgba(180,138,72,0.5); border-radius: 8px; font-size: 0.9rem; font-style: italic; color: var(--walnut); text-align: center; }
 
     .break { display: flex; align-items: center; gap: 0.8rem; margin: 1.2rem 0; color: var(--walnut); }
     .break i { flex: 1; height: 1px; background: rgba(132,105,77,0.3); }
@@ -210,7 +206,7 @@
 <script>
 const PROGRAM = [
   {
-    title: "Surah Al-Fatiha", subtitle: "The Opening", performer: "", duration: "1 min",
+    title: "Surah Al-Fatiha", subtitle: "The Opening", performer: "",
     meaning: "The opening chapter of the Quran. It praises God, asks for His help, and asks to be guided on the straight path. It opens our evening with gratitude and a shared intention.",
     parts: [{ verses: [
       { t: "Bismillahir Rahmanir Rahim", m: "In the name of God, the Most Gracious, the Most Merciful" },
@@ -225,7 +221,7 @@ const PROGRAM = [
     ]}],
   },
   {
-    title: "Welcome", subtitle: "", performer: "Sabrina & Rehman", duration: "2 min",
+    title: "Welcome", subtitle: "", performer: "Sabrina & Rehman",
     meaning: "A moment to arrive fully, settle in, and set our intention for the evening. There will be breaks between pieces, so if you need to step out, please wait until the end of the song or zikr.",
     parts: [],
   },
@@ -233,7 +229,7 @@ const PROGRAM = [
     title: "Bismillah", subtitle: "", performer: "Saurabh & Tejus",
     meaning: "“Bismillah” means “In the name of God.” It is the invocation Muslims use to mark the beginning of any action, journey, or speech. The song celebrates the peace, security, and grace that come when we surrender our endeavours to the Creator right from the start. Rather than a ritual phrase, the lyrics frame Bismillah as a key to divine protection, blessings (barakat), and a sanctuary against the chaos of the material world.",
     connection: "Beginning with the name of God mirrors the Ismaili practice of reciting Bismillah ir-Rahman ir-Rahim before any task, prayer, or assembly. It is a continuous reminder for the murid to align intellect and action with the grace, mercy, and presence of the Imam-of-the-Time.",
-    origins: ["Composed and produced by the brother duo Salim and Sulaiman Merchant for Season 3 (2013) of Coke Studio India, with lyrics by Irfan Siddiqui. It pairs the raw folk voice of Kailash Kher with the soaring qawwali style of Munawar Masoom, layering harmoniums and claps over modern bass, drums, and guitar. Past the three-minute mark it opens into a rhythmic dialogue of vocal improvisations (sargams) and ecstatic clapping, like a live qawwali sanctuary."],
+    origins: ["Composed and produced by the brother duo Salim and Sulaiman Merchant for Season 3 (2013) of Coke Studio India, with lyrics by Irfan Siddiqui. It pairs the raw folk voice of Kailash Kher with the soaring qawwali style of Munawar Masoom, layering harmoniums and claps over modern bass, drums, and guitar."],
     parts: [
       { title: "The Divine Beginning", note: "A simple invocation opens the door to absolute grace.", verses: [
         { t: "Barqaton ka paigham mile,\nKehne se: La Ilaha illallah.", m: "A message of infinite blessings is received simply by proclaiming: There is no deity but the One God." },
@@ -298,7 +294,7 @@ const PROGRAM = [
     ],
   },
   {
-    title: "Bood Ali Bood", subtitle: "Persian Qasida · Ta Surat e Paivand", performer: "Saurabh & Tejus", duration: "5 min",
+    title: "Bood Ali Bood", subtitle: "Persian Qasida · Ta Surat e Paivand", performer: "Saurabh & Tejus",
     meaning: "“Bood Ali Bood” means “Ali was present.” This revered Persian qasida (ode of praise) explores esoteric Islamic metaphysics (irfan). It describes Hazrat Ali not only as a historical figure but as the cosmic manifestation of Divine Light (Noor) that existed before physical creation. The poetry travels through history, showing that while empires, prophets, and universes cycled through time, the reality of Divine Guidance was always present.",
     connection: "The qasida mirrors the core Shi‘i Ismaili doctrine of the Eternal Noor of Imamat: the spiritual essence and light of the Imam existed before the creation of the physical world and continues to guide humanity through the living Imam-of-the-Time.",
     origins: ["The text is traditionally attributed to the 13th-century mystic poet Shams Tabrizi, spiritual mentor of Jalaluddin Rumi. For generations it has been a foundational part of the devotional repertoire of Central Asian, Afghan, and South Asian Ismaili communities, performed with rubab, daf, and harmonium. Recent revivals have added ambient and electronic layers while preserving its meditative core."],
@@ -318,18 +314,17 @@ const PROGRAM = [
     ],
   },
   {
-    title: "Ali Mowla + Man Kunto Maula", subtitle: "Custom version by Shruti", performer: "Saurabh & Tejus",
+    title: "Ali Mowla + Man Kunto Maula", subtitle: "", performer: "Saurabh & Tejus",
     meaning: "“Ali Mowla” means “Ali, our master and guide.” Man Kunto Maula comes from the words of the Prophet Muhammad at Ghadir Khumm. The poet Amir Khusrau set these words to music in the 13th century, and it is often called the very first qawwali. This is our first big sing-along of the night.",
     parts: [
       { title: "The Core Line", verses: [
         { t: "Man kunto maula, fa Ali-un maula", m: "For whoever I am master, Ali is their master", ch: true },
       ]},
     ],
-    pending: "Full lyrics for Shruti’s version coming soon.",
   },
   { kind: "break", label: "Short break · 10 minutes" },
   {
-    title: "Zikr", subtitle: "", performer: "Alisa, with Saurabh on cajón", duration: "10 min", zikr: true,
+    title: "Zikr", subtitle: "", performer: "Alisa & Salim", zikr: true,
     meaning: "“Zikr” means remembrance, or invocation. Rather than a static song, a zikr is a continuous, meditative repetition of divine names, sacred attributes, and prayers. It guides the listener through spiritual healing, comfort in hardship, and deep gratitude (shukran lillah) to the Creator, exploring divine protection (mushkil asaan), surrender, and the realisation that the light of guidance is ever-present.",
     connection: "This selection strings together central phrases from the Ismaili Tariqah, including the Salawat, Nad-e-Ali, and direct supplications to the Guide. It is a sonic preparation for Bandagi, centring the murid’s intellect and breath on the continuous presence of the Hazir Imam.",
     origins: [
@@ -338,38 +333,31 @@ const PROGRAM = [
       "Awwal tu, Aakhar tu reflects the batini (esoteric) reality that the Noor of Imamat transcends time and space, both the visible outer guide and the hidden inner reality. Ya Hayyul Qayyum links the eternal attributes of God with the living presence of the Imam-of-the-Time, and Ya Ale Nabi celebrates the unbroken lineage of the Imamat. Shukran Lillah is the final expression of shukrana for the blessing of the living path of guidance.",
     ],
     parts: [
-      { title: "The Zikr", note: "The cajón keeps a steady heartbeat through every sing-along. Let the music swell during Ya Hayyul Qayyum.", verses: [
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "O Allah, shower Your blessings and peace upon Prophet Muhammad and his radiant family", ch: true, cue: "4 times" },
-        { interlude: true },
+      { title: "The Zikr", verses: [
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "O Allah, shower Your blessings and peace upon Prophet Muhammad and his radiant family", ch: true },
         { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "O Hazrat Ali, bestow Your mercy upon us. O my Master, shower us with Your grace", ch: true },
-        { t: "Ya Rahman, ya Raheem", m: "O the Most Gracious, O the Most Merciful", cue: "Alisa solo · 2 times" },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true, cue: "4 times" },
-        { interlude: true },
+        { t: "Ya Rahman, ya Raheem", m: "O the Most Gracious, O the Most Merciful" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
         { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
         { t: "Ya Ali aghisani, ya Ali adrikani\nHar bala tu door kar, Mushkil Kusha Maula Ali", m: "O Hazrat Ali, come to my assistance and hold my hand. Drive away every calamity and hardship, O Dispeller of Difficulties", ch: true },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true, cue: "4 times" },
-        { interlude: true },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
         { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
-        { t: "Awwal tu, Aakhar tu, Zaahir tu, Baatin tu", m: "You are the First and the Last. You are the Manifest Outer Reality and the Deeply Hidden Secret", cue: "Alisa solo · once" },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true, cue: "4 times" },
-        { interlude: true },
+        { t: "Awwal tu, Aakhar tu, Zaahir tu, Baatin tu", m: "You are the First and the Last. You are the Manifest Outer Reality and the Deeply Hidden Secret" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
         { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
-        { t: "Ya Hayyul Qayyum, ya Aliyul Azeem\nYa Sahib az-Zamaan, ya Hazir Imam", m: "O the Ever-Living, the Self-Subsisting Sustainer. O Supreme Lord of the Age, O our Present, Living Imam", cue: "Duet · music swells" },
+        { t: "Ya Hayyul Qayyum, ya Aliyul Azeem\nYa Sahib az-Zamaan, ya Hazir Imam", m: "O the Ever-Living, the Self-Subsisting Sustainer. O Supreme Lord of the Age, O our Present, Living Imam" },
         { t: "Ya Hayyul Qayyum, ya Aliyul Azeem\nYa Sahib az-Zamaan, ya Hazir Imam", m: "", ch: true },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true, cue: "4 times" },
-        { interlude: true },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
         { t: "Ya Ali tu reham kar, ya Maula tu fazal kar\nAllahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
-        { t: "Ya Ale Nabi, Aulaad-e-Ali\nYa Mushkil Kusha, ya Hazir Imam", m: "O Family of the Holy Prophet, O noble Descendants of Hazrat Ali, O Dispeller of all hardships, O our Living Guide", cue: "Saurabh solo · once" },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true, cue: "4 times" },
-        { interlude: true },
-        { t: "Shukran Lillah, Alhamdulillah", m: "All gratitude is due to God alone, all praise belongs to Allah", cue: "Alisa solo · 2 times" },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", cue: "Slowing down" },
-        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", cue: "Into silence" },
+        { t: "Ya Ale Nabi, Aulaad-e-Ali\nYa Mushkil Kusha, ya Hazir Imam", m: "O Family of the Holy Prophet, O noble Descendants of Hazrat Ali, O Dispeller of all hardships, O our Living Guide" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
+        { t: "Shukran Lillah, Alhamdulillah", m: "All gratitude is due to God alone, all praise belongs to Allah" },
+        { t: "Allahumma salli ‘ala Muhammadin wa aale Muhammad", m: "", ch: true },
       ]},
     ],
   },
   {
-    title: "Dhan Dhan Aajno", subtitle: "Salgirah Ginan", performer: "Ikrah & Khadij", duration: "5 min",
+    title: "Dhan Dhan Aajno", subtitle: "Salgirah Ginan", performer: "Ikrah & Khadij",
     meaning: "“Dhan Dhan Aajno” means “Blessed, blessed is this day.” This ginan (sacred hymn) is a joyous celebration of spiritual attainment and divine presence. It expresses gratitude for finding the true spiritual master, Mawla Ali, which purifies the soul and washes away the sins of past ages. It reminds us to turn away from the illusions of a deceptive material world, focus on virtuous deeds, and celebrate the union between the soul and the Divine.",
     connection: "This ginan is traditionally recited on auspicious occasions like Salgirah (the birthday of the Imam) and Khushali. It celebrates the manifestation of the Imam-of-the-Time in human form, reminding the Jamat of its eternal link to the Living Guide.",
     origins: ["Composed by the revered 14th-century Ismaili missionary and saint Pir Sadardin. For centuries ginans were preserved orally and written in the Khojki script. The melody draws on South Asian folk and raga traditions and is traditionally sung in Jamatkhana or community gatherings."],
@@ -457,7 +445,7 @@ const PROGRAM = [
   },
   {
     title: "Bandeya Ho", subtitle: "", performer: "Saurabh & Tejus",
-    meaning: "“Bandeya” comes from banda: “O human,” or mankind. The song is a direct, urgent address to human consciousness, an emotional plea for humanity to shed its arrogance, look beyond artificial divisions of status, caste, and institutionalised religion, and recognise that all human beings are equal in the eyes of the Divine. It explores universal love, humility, and the awakening that comes when a person chooses raw humanity over judgemental structures. We sing a faster version.",
+    meaning: "“Bandeya” comes from banda: “O human,” or mankind. The song is a direct, urgent address to human consciousness, an emotional plea for humanity to shed its arrogance, look beyond artificial divisions of status, caste, and institutionalised religion, and recognise that all human beings are equal in the eyes of the Divine. It explores universal love, humility, and the awakening that comes when a person chooses raw humanity over judgemental structures.",
     connection: "The plea to look past external structures and cultivate a pure heart aligns with the practice of Bandagi, where one must shed worldly ego and titles. It also reflects the Ismaili ethic of pluralism, recognising all of humanity as part of a single, universal soul.",
     origins: ["The version that popularised this poetry belongs to the landmark 2007 Pakistani film Khuda Kay Liye, directed by Shoaib Mansoor. Composed by Rohail Hyatt (the pioneer behind Coke Studio) with Khawar Jawad, it blends a soft, melancholic rock arrangement with Eastern rhythms into an evergreen anthem of reflection."],
     parts: [
@@ -484,7 +472,7 @@ const PROGRAM = [
     title: "Dum Ali Ali Dum", subtitle: "Finale", performer: "Saurabh & Tejus",
     meaning: "“Dum Ali Ali Dum” is a sacred chant where dum means breath, or the life force. The song describes a state of permanent meditation, where the seeker uses every incoming and outgoing breath to invoke the name and presence of Hazrat Ali. Rhythmic chanting becomes an internal vehicle to transcend worldly anxiety and enter complete tranquillity. It celebrates hama dum, with every single breath: continuous remembrance leads to an unbreakable bond with the Divine.",
     connection: "Connecting the sacred name with the rhythm of breathing aligns with the personal, internal practice of dhikr within the Ismaili Tariqah, using one’s life force to remain continuously aware of the eternal presence (Noor) of the Imam-of-the-Time.",
-    origins: ["The version referenced here is by classical and pop-rock vocalist Shafqat Amanat Ali, from his landmark 2008 debut solo album Tabeer. From the Patiala Gharana lineage, he delivers the traditional Persian and Punjabi verses with slow-burning intensity, moving from a calm acoustic guitar and harmonium intro into thumping classical percussion, like the crescendo of a live spiritual gathering."],
+    origins: ["The best-known version is by classical and pop-rock vocalist Shafqat Amanat Ali, from his landmark 2008 debut solo album Tabeer. From the Patiala Gharana lineage, he delivers the traditional Persian and Punjabi verses with slow-burning intensity, moving from a calm acoustic guitar and harmonium intro into thumping classical percussion, like the crescendo of a live spiritual gathering."],
     parts: [
       { title: "The Constant Breath", note: "The soul uses its very life breath to maintain connection.", verses: [
         { t: "Dum hama dum Ali Ali,\nDum hama dum Ali Ali.", m: "With every single breath I take, my soul chants Ali, Ali. With every breath, Ali, Ali.", ch: true },
@@ -513,13 +501,10 @@ function render() {
     }
     n++;
     const hasBody = !!(item.meaning || (item.parts && item.parts.length));
-    const who = [item.performer, item.duration].filter(Boolean).map((s, i) => i === 0 && item.performer ? `<b>${esc(s)}</b>` : esc(s)).join(" &middot; ");
+    const who = item.performer ? `<b>${esc(item.performer)}</b>` : "";
     const parts = (item.parts || []).map((p) => {
       const verses = p.verses.map((v) => {
-        if (v.interlude) return `<div class="verse interlude"><span>Interlude</span></div>`;
-        const tags = [];
-        if (v.ch) tags.push(`<span class="tag">&#9835; Sing along${v.cue ? " &middot; " + esc(v.cue) : ""}</span>`);
-        else if (v.cue) tags.push(`<span class="tag cue">${esc(v.cue)}</span>`);
+        const tags = v.ch ? [`<span class="tag">&#9835; Sing along</span>`] : [];
         return `<div class="verse${v.ch ? " ch" : ""}">${tags.join("")}<div class="l">${esc(v.t)}</div>${v.m ? `<div class="m">${esc(v.m)}</div>` : ""}</div>`;
       }).join("");
       return `<div class="part">${p.title ? `<div class="part-title">${esc(p.title)}</div>` : ""}${p.note ? `<div class="part-note">${esc(p.note)}</div>` : ""}<div class="verses">${verses}</div></div>`;
@@ -530,7 +515,6 @@ function render() {
         ${item.connection ? `<div class="callout"><span class="lbl">Ismaili connection</span><p>${esc(item.connection)}</p></div>` : ""}
         ${item.origins ? `<details class="origins"><summary>About the song</summary>${item.origins.map(o => `<p>${esc(o)}</p>`).join("")}</details>` : ""}
         ${parts}
-        ${item.pending ? `<div class="pending">${esc(item.pending)}</div>` : ""}
       </div>` : "";
     return `
       <div class="item fade${item.zikr ? " zikr" : ""}">
