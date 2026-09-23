@@ -131,7 +131,8 @@
     .part-title { font-family: var(--display); font-size: 0.95rem; color: var(--onyx); padding-bottom: 0.35rem; border-bottom: 1px solid rgba(180,138,72,0.35); }
     .part-title small { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-right: 0.5rem; }
     .part-note { font-size: 0.9rem; font-style: italic; color: var(--walnut); line-height: 1.6; margin-top: 0.4rem; }
-    .verses { margin-top: 0.7rem; }
+    .verses { margin-top: 1.2rem; }
+    .verses + .verses { margin-top: 0.4rem; }
     .verse { padding: 0.55rem 0.7rem 0.55rem 0.85rem; margin-bottom: 0.4rem; border-left: 3px solid transparent; border-radius: 0 6px 6px 0; }
     .verse.ch { border-left-color: rgba(180,138,72,0.6); background: rgba(180,138,72,0.07); }
     .verse .tag { display: block; font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
@@ -508,7 +509,7 @@ function render() {
         const tags = v.ch ? [`<span class="tag">&#9835; Sing along</span>`] : [];
         return `<div class="verse${v.ch ? " ch" : ""}">${tags.join("")}<div class="l">${esc(v.t)}</div>${v.m ? `<div class="m">${esc(v.m)}</div>` : ""}</div>`;
       }).join("");
-      return `<div class="part">${p.title ? `<div class="part-title">${esc(p.title)}</div>` : ""}${p.note ? `<div class="part-note">${esc(p.note)}</div>` : ""}<div class="verses">${verses}</div></div>`;
+      return `<div class="verses">${verses}</div>`;
     }).join("");
     const body = hasBody ? `
       <div class="body">
