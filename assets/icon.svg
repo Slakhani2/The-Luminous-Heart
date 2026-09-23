@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-230 -230 460 460" fill="none" stroke="#B48A48" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+  <defs>
+    <mask id="m" maskUnits="userSpaceOnUse" x="-230" y="-230" width="460" height="460"><rect x="-230" y="-230" width="460" height="460" fill="#fff" stroke="none"/><circle r="85" fill="#000" stroke="none"/></mask>
+    <path id="p" d="M0,-27 L-14.6,-59.4 A16,16 0 1 1 14.6,-59.4 Z"/>
+    <g id="q">
+      <path d="M-9.9,-158.0 L9.9,-158.0 L24.0,-143.9 L24.0,-124.1 L9.9,-110.0 L-9.9,-110.0 L-24.0,-124.1 L-24.0,-143.9 Z"/>
+      <path d="M-35.0,-118.0 L-25.0,-118.0 L-18.0,-111.0 L-18.0,-101.0 L-25.0,-94.0 L-35.0,-94.0 L-42.0,-101.0 L-42.0,-111.0 Z"/>
+      <path d="M25.0,-118.0 L35.0,-118.0 L42.0,-111.0 L42.0,-101.0 L35.0,-94.0 L25.0,-94.0 L18.0,-101.0 L18.0,-111.0 Z"/>
+      <path d="M-41,-101 L-69,-88 L-69,88"/>
+      <path d="M41,-101 L69,-88"/>
+      <path d="M-19,-97 L-7,-92 L7,-92 L19,-97"/>
+    </g>
+  </defs>
+  <path d="M0,-207 L207,0 L0,207 L-207,0 Z"/>
+  <g mask="url(#m)"><use xlink:href="#q" transform="rotate(0)"/><use xlink:href="#q" transform="rotate(90)"/><use xlink:href="#q" transform="rotate(180)"/><use xlink:href="#q" transform="rotate(270)"/></g>
+  <use xlink:href="#p" transform="rotate(0)"/><use xlink:href="#p" transform="rotate(30)"/><use xlink:href="#p" transform="rotate(60)"/><use xlink:href="#p" transform="rotate(90)"/><use xlink:href="#p" transform="rotate(120)"/><use xlink:href="#p" transform="rotate(150)"/><use xlink:href="#p" transform="rotate(180)"/><use xlink:href="#p" transform="rotate(210)"/><use xlink:href="#p" transform="rotate(240)"/><use xlink:href="#p" transform="rotate(270)"/><use xlink:href="#p" transform="rotate(300)"/><use xlink:href="#p" transform="rotate(330)"/>
+  <path d="M8.3,-30.9 L8.5,-14.7 L22.6,-22.6 L14.7,-8.5 L30.9,-8.3 L17.0,-0.0 L30.9,8.3 L14.7,8.5 L22.6,22.6 L8.5,14.7 L8.3,30.9 L0.0,17.0 L-8.3,30.9 L-8.5,14.7 L-22.6,22.6 L-14.7,8.5 L-30.9,8.3 L-17.0,0.0 L-30.9,-8.3 L-14.7,-8.5 L-22.6,-22.6 L-8.5,-14.7 L-8.3,-30.9 L-0.0,-17.0 Z"/>
+</svg>
