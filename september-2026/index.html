@@ -209,7 +209,6 @@
     <div class="section program-head fade">
       <div class="eyebrow">The Program</div>
       <p>Tap each piece to see its meaning, lyrics, and translations.</p>
-      <div class="legend"><i></i> Sing along</div>
     </div>
 
     <div id="program"></div>
@@ -317,7 +316,7 @@ const PROGRAM = [
   },
   {
     title: "Ali Mowla + Man Kunto Maula", subtitle: "", performer: "Saurabh & Tejus",
-    meaning: "“Ali Mowla” means “Ali, our master and guide.” Man Kunto Maula comes from the words of the Prophet Muhammad at Ghadir Khumm. The poet Amir Khusrau set these words to music in the 13th century, and it is often called the very first qawwali. This is our first big sing-along of the night.",
+    meaning: "“Ali Mowla” means “Ali, our master and guide.” Man Kunto Maula comes from the words of the Prophet Muhammad at Ghadir Khumm. The poet Amir Khusrau set these words to music in the 13th century, and it is often called the very first qawwali.",
     parts: [
       { title: "The Core Line", verses: [
         { t: "Man kunto maula, fa Ali-un maula", m: "For whoever I am master, Ali is their master", ch: true },
@@ -506,8 +505,8 @@ function render() {
     const who = item.performer ? `<b>${esc(item.performer)}</b>` : "";
     const parts = (item.parts || []).map((p) => {
       const verses = p.verses.map((v) => {
-        const tags = v.ch ? [`<span class="tag">&#9835; Sing along</span>`] : [];
-        return `<div class="verse${v.ch ? " ch" : ""}">${tags.join("")}<div class="l">${esc(v.t)}</div>${v.m ? `<div class="m">${esc(v.m)}</div>` : ""}</div>`;
+        const tags = [];
+        return `<div class="verse">${tags.join("")}<div class="l">${esc(v.t)}</div>${v.m ? `<div class="m">${esc(v.m)}</div>` : ""}</div>`;
       }).join("");
       if (item.keepParts) return `<div class="part">${p.title ? `<div class="part-title">${esc(p.title)}</div>` : ""}${p.note ? `<div class="part-note">${esc(p.note)}</div>` : ""}<div class="verses">${verses}</div></div>`;
       return `<div class="verses">${verses}</div>`;
